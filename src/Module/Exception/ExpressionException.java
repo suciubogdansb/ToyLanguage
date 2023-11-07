@@ -1,2 +1,7 @@
-package Module.Exception;public class ExpressionException {
+package Module.Exception;
+
+public class ExpressionException extends Exception{
+    public ExpressionException(String message){
+        super(message);
+    }
 }

@@ -1,2 +1,7 @@
-package Module.Exception;public class StackException {
+package Module.Exception;
+
+public class StackException extends Exception{
+    public StackException(String message){
+        super(message);
+    }
 }

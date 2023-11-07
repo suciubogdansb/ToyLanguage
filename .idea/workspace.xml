@@ -4,14 +4,66 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61e5d0b-f5be-4eae-9772-0bd779882e73" name="Changes" comment="" />
+    <list default="true" id="d61e5d0b-f5be-4eae-9772-0bd779882e73" name="Changes" comment="gsegf">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Containers/DictionaryInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Containers/DictionaryInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Containers/ListInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Containers/ListInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Containers/MyDictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Containers/MyDictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Containers/MyList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Containers/MyList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Containers/MyStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Containers/MyStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Containers/StackInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Containers/StackInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Exception/DictionaryException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Exception/DictionaryException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Exception/DivisionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Exception/DivisionException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Exception/ExpressionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Exception/ExpressionException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Exception/IOException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Exception/IOException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Exception/ListException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Exception/ListException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Exception/StackException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Exception/StackException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Exception/TypeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Exception/TypeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Expression/ArithmeticExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Expression/ArithmeticExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Expression/ExpressionInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Expression/ExpressionInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Expression/LogicalExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Expression/LogicalExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Expression/ValueExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Expression/ValueExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Expression/VariableExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Expression/VariableExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/ProgramState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/ProgramState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/AssignStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/AssignStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/CompoundStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/CompoundStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/IfStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/IfStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/NOPStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/NOPStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/PrintStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/PrintStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/StatementInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/StatementInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/VariableStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/VariableStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Type/BoolType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Type/BoolType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Type/IntType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Type/IntType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Type/TypeInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Type/TypeInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Value/BoolValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Value/BoolValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Value/IntValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Value/IntValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Value/ValueInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Value/ValueInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/MemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MemoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/RepositoryInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/RepositoryInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/UI.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -22,15 +74,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "working",
+    "jdk.selected.JAVA_MODULE": "19",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="ToyLanguage" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -40,6 +112,10 @@
       <option name="presentableId" value="Default" />
       <updated>1698073564776</updated>
       <workItem from="1698073566091" duration="14000" />
+      <workItem from="1698821996180" duration="1209000" />
+      <workItem from="1698847759171" duration="2661000" />
+      <workItem from="1699280311457" duration="12944000" />
+      <workItem from="1699370683795" duration="2181000" />
     </task>
     <servers />
   </component>

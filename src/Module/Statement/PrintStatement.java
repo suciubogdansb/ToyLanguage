@@ -1,4 +1,13 @@
-package Module;
+package Module.Statement;
+
+import Module.Containers.ListInterface;
+import Module.Containers.StackInterface;
+import Module.Exception.DictionaryException;
+import Module.Exception.DivisionException;
+import Module.Exception.ExpressionException;
+import Module.Expression.ExpressionInterface;
+import Module.ProgramState;
+import Module.Value.ValueInterface;
 
 public class PrintStatement implements StatementInterface{
     private ExpressionInterface expression;
@@ -7,12 +16,19 @@ public class PrintStatement implements StatementInterface{
         this.expression = expression;
     }
 
-    public ProgramState execute(ProgramState state) throws Exception {
-        state.getOutput().add(expression.evaluate(state.getSymbolTable(), state.getHeap()));
-        return null;
+    public ProgramState execute(ProgramState state) throws DivisionException, ExpressionException, DictionaryException {
+        StackInterface<StatementInterface> stack = state.getExecutionStack();
+        ListInterface<ValueInterface> out = state.getOutput();
+        out.add(expression.evaluate(state.getSymbolTable()));
+        return state;
     }
 
     public String toString() {
         return "print(" + expression.toString() + ")";
+    }
+
+    @Override
+    public StatementInterface deepCopy() {
+        return new PrintStatement(expression.deepCopy());
     }
 }

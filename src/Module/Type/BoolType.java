@@ -1,4 +1,7 @@
-package Type;
+package Module.Type;
+
+import Module.Value.BoolValue;
+import Module.Value.ValueInterface;
 
 public class BoolType implements TypeInterface{
     public boolean equals(Object another) {
@@ -7,5 +10,10 @@ public class BoolType implements TypeInterface{
 
     public String toString() {
         return "bool";
+    }
+
+    @Override
+    public ValueInterface defaultValue() {
+        return new BoolValue(false);
     }
 }
