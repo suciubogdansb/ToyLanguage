@@ -110,22 +110,8 @@ Menu:
                         throw new IOException("Wrong Input");
                 }
             }
-            catch (IOException e){
-                System.out.println(e.getClass() + ": " + e.getMessage());
-            }
-            catch (DictionaryException e) {
-                System.out.println(e.getClass() + ": " + e.getMessage());
-            }
-            catch (DivisionException e) {
-                System.out.println(e.getClass() + ": " + e.getMessage());
-            }
-            catch (ExpressionException e){
-                System.out.println(e.getClass() + ": " + e.getMessage());
-            }
-            catch (StackException e){
-                System.out.println(e.getClass() + ": " + e.getMessage());
-            }
-            catch (TypeException e){
+            catch (IOException | DictionaryException | DivisionException | ExpressionException | StackException |
+                   TypeException e){
                 System.out.println(e.getClass() + ": " + e.getMessage());
             }
             catch (Exception e){
