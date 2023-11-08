@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61e5d0b-f5be-4eae-9772-0bd779882e73" name="Changes" comment="A2">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Service.java" afterDir="false" />
+    <list default="true" id="d61e5d0b-f5be-4eae-9772-0bd779882e73" name="Changes" comment="A2 update">
       <change beforePath="$PROJECT_DIR$/src/View/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/UI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +92,7 @@
       <workItem from="1698847759171" duration="2661000" />
       <workItem from="1699280311457" duration="12944000" />
       <workItem from="1699370683795" duration="2294000" />
-      <workItem from="1699453671755" duration="335000" />
+      <workItem from="1699453671755" duration="1004000" />
     </task>
     <task id="LOCAL-00001" summary="A2">
       <option name="closed" value="true" />
@@ -104,7 +102,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699372877269</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="A2 update">
+      <option name="closed" value="true" />
+      <created>1699454311870</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699454311870</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,6 +118,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="A2" />
-    <option name="LAST_COMMIT_MESSAGE" value="A2" />
+    <MESSAGE value="A2 update" />
+    <option name="LAST_COMMIT_MESSAGE" value="A2 update" />
   </component>
 </project>
