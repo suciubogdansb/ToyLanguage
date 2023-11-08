@@ -78,26 +78,30 @@ public class UI {
     }
 
     void menu(){
-        System.out.println("""
+        boolean displayFlag = true;
+        Scanner scanner = new Scanner(System.in);
+        boolean isRunning = true;
+        while(isRunning){
+            System.out.println("""
 Menu:
 1. Run program 1
 2. Run program 2
 3. Run program 3
-0. Exit""");
-        Scanner scanner = new Scanner(System.in);
-        boolean isRunning = true;
-        while(isRunning){
+4. Switch flag. Current flag:\s""" + displayFlag + "\n0. Exit");
             try{
                 String input = scanner.nextLine();
                 switch (input){
                     case "1":
-                        this.service.runIndex(0);
+                        this.service.runIndex(0, displayFlag);
                         break;
                     case "2":
-                        this.service.runIndex(1);
+                        this.service.runIndex(1, displayFlag);
                         break;
                     case "3":
-                        this.service.runIndex(2);
+                        this.service.runIndex(2, displayFlag);
+                        break;
+                    case "4":
+                        displayFlag = !displayFlag;
                         break;
                     case "0":
                         isRunning = false;

@@ -38,18 +38,22 @@ public class Service {
         repository.addProgram(new ProgramState(originalProgram));
     }
 
-    public void runIndex(int index) throws DivisionException, TypeException, StackException, ExpressionException,
+    public void runIndex(int index, boolean displayFlag) throws DivisionException, TypeException, StackException, ExpressionException,
             DictionaryException {
         repository.changeCurrentIndex(index);
-        allStep();
+        allStep(displayFlag);
     }
 
-    void allStep() throws DivisionException, TypeException, StackException, ExpressionException, DictionaryException {
+    void allStep(boolean displayFlag) throws DivisionException, TypeException, StackException, ExpressionException, DictionaryException {
         ProgramState programState = repository.getCurrentProgram();
-        System.out.println(programState);
+        if(displayFlag) {
+            System.out.println(programState);
+        }
         while (!programState.getExecutionStack().isEmpty()) {
             oneStep(programState);
-            System.out.println(programState);
+            if(displayFlag || programState.getExecutionStack().isEmpty()) {
+                System.out.println(programState);
+            }
         }
     }
 
