@@ -28,4 +28,12 @@ public class BoolValue implements ValueInterface{
     public ValueInterface deepCopy() {
         return new BoolValue(value);
     }
+
+    @Override
+    public boolean equals(Object another) {
+        if (another instanceof BoolValue) {
+            return this.value == ((BoolValue) another).getValue();
+        }
+        return false;
+    }
 }

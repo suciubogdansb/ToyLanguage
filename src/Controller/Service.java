@@ -28,7 +28,7 @@ public class Service {
         List<String> statements = new ArrayList<>(Arrays.asList(programString.split("[^(].*\\s*;\\s*.*[^)]")));
         List<StatementInterface> statementList = new ArrayList<>();
         for (String statement : statements) {
-            if(statement.isEmpty())
+            if (statement.isEmpty())
                 statementList.add(new NOPStatement());
             //else if(statement.)
         }
@@ -39,28 +39,24 @@ public class Service {
     }
 
     public void runIndex(int index, boolean displayFlag) throws DivisionException, TypeException, StackException, ExpressionException,
-            DictionaryException {
+            DictionaryException, IOException, RepositoryException {
         repository.changeCurrentIndex(index);
-        allStep(displayFlag);
+        allStep();
     }
 
-    void allStep(boolean displayFlag) throws DivisionException, TypeException, StackException, ExpressionException, DictionaryException {
+    public void allStep() throws DivisionException, TypeException, StackException, ExpressionException, DictionaryException, IOException, RepositoryException {
         ProgramState programState = repository.getCurrentProgram();
-        if(displayFlag) {
-            System.out.println(programState);
-        }
+        this.repository.logProgramStateExecution();
         while (!programState.getExecutionStack().isEmpty()) {
             oneStep(programState);
-            if(displayFlag || programState.getExecutionStack().isEmpty()) {
-                System.out.println(programState);
-            }
+            this.repository.logProgramStateExecution();
         }
     }
 
     ProgramState oneStep(ProgramState programState) throws StackException,
-            DivisionException, TypeException, ExpressionException, DictionaryException {
+            DivisionException, TypeException, ExpressionException, DictionaryException, IOException {
         StackInterface<StatementInterface> stack = programState.getExecutionStack();
-        if(stack.isEmpty()) {
+        if (stack.isEmpty()) {
             throw new StackException("Execution stack is empty!");
         }
         StatementInterface currentStatement = stack.pop();

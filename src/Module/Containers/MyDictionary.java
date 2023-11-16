@@ -2,6 +2,7 @@ package Module.Containers;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Vector;
 
 public class MyDictionary<T1, T2> implements DictionaryInterface<T1, T2>{
     Map<T1, T2> dictionary;
@@ -36,5 +37,18 @@ public class MyDictionary<T1, T2> implements DictionaryInterface<T1, T2>{
     @Override
     public void clear() {
         dictionary.clear();
+    }
+
+    @Override
+    public void remove(T1 key) {
+        dictionary.remove(key);
+    }
+
+    @Override
+    public Vector<T1> getAll() {
+        Vector<T1> keys = new Vector<>();
+        for(T1 key : dictionary.keySet())
+            keys.add(key);
+        return keys;
     }
 }

@@ -6,8 +6,10 @@ public class NOPStatement implements StatementInterface{
         return state;
     }
 
+    public NOPStatement(){}
+
     public String toString() {
-        return "";
+        return "NOP";
     }
 
     @Override

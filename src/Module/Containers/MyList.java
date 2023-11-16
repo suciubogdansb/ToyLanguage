@@ -28,4 +28,9 @@ public class MyList<T> implements ListInterface<T>{
     public void clear() {
         list.clear();
     }
+
+    @Override
+    public List<T> getAll() {
+        return list;
+    }
 }

@@ -28,4 +28,12 @@ public class IntValue implements ValueInterface{
     public ValueInterface deepCopy() {
         return new IntValue(value);
     }
+
+    @Override
+    public boolean equals(Object another) {
+        if (another instanceof IntValue) {
+            return this.value == ((IntValue) another).getValue();
+        }
+        return false;
+    }
 }

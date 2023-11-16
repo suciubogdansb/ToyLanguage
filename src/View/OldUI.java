@@ -13,28 +13,30 @@ import Module.Value.IntValue;
 
 import java.util.Scanner;
 
-public class UI {
+public class OldUI {
     Service service;
 
-    public UI(Service service) {
+    public OldUI(Service service) {
         this.service = service;
         this.addHardcodedPrograms();
         this.menu();
     }
 
-    public UI(){
+    public OldUI(){
         this.service = new Service();
         this.addHardcodedPrograms();
         this.menu();
     }
 
     private void addHardcodedPrograms() {
+        //int v; v=2; Print(v)
         StatementInterface program1 = new CompoundStatement(
                 new VariableStatement("v", new IntType()),
                 new CompoundStatement(
                         new AssignStatement("v", new ValueExpression(new IntValue(2))),
                         new PrintStatement(new VariableExpression("v"))));
         this.service.addProgram(program1);
+        //int a; int b; a=2+3*5; b=a+1; Print(b)
         StatementInterface program2 = new CompoundStatement(
                 new VariableStatement("a", new IntType()),
                 new CompoundStatement(
@@ -58,6 +60,7 @@ public class UI {
                                             new ValueExpression(new IntValue(1)))),
                                     new PrintStatement(new VariableExpression("b"))))));
         this.service.addProgram(program2);
+        // a = true; v = 2; if (a) then v = 2 else v = 3; print(v)
         StatementInterface program3 = new CompoundStatement(
                 new VariableStatement("a", new BoolType()),
                 new CompoundStatement(

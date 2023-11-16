@@ -4,8 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61e5d0b-f5be-4eae-9772-0bd779882e73" name="Changes" comment="A2 update">
-      <change beforePath="$PROJECT_DIR$/src/View/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/UI.java" afterDir="false" />
+    <list default="true" id="d61e5d0b-f5be-4eae-9772-0bd779882e73" name="Changes" comment="A2 update colapse">
+      <change afterPath="$PROJECT_DIR$/src/Module/Containers/FileTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Module/Containers/FileTableInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Module/Exception/RepositoryException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Module/Expression/RelationalExpression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Module/Statement/CloseReadStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Module/Statement/OpenReadStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Module/Statement/ReadStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Module/Type/StringType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Module/Value/StringValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/Commands/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/Commands/ExitCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/Commands/RunExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/TextMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interpreter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Containers/DictionaryInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Containers/DictionaryInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Containers/ListInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Containers/ListInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Containers/MyDictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Containers/MyDictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Containers/MyList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Containers/MyList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Containers/MyStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Containers/MyStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Containers/StackInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Containers/StackInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/ProgramState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/ProgramState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/NOPStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/NOPStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/StatementInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/StatementInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Value/BoolValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Value/BoolValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Value/IntValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Value/IntValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Value/ValueInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Value/ValueInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/MemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MemoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/RepositoryInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/RepositoryInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/OldUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,8 +96,8 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+    <configuration name="Interpreter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Interpreter" />
       <module name="ToyLanguage" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -75,7 +105,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Interpreter" />
       </list>
     </recent_temporary>
   </component>
@@ -92,7 +122,10 @@
       <workItem from="1698847759171" duration="2661000" />
       <workItem from="1699280311457" duration="12944000" />
       <workItem from="1699370683795" duration="2294000" />
-      <workItem from="1699453671755" duration="1004000" />
+      <workItem from="1699453671755" duration="1895000" />
+      <workItem from="1700043213573" duration="134000" />
+      <workItem from="1700043455374" duration="4534000" />
+      <workItem from="1700054460344" duration="7157000" />
     </task>
     <task id="LOCAL-00001" summary="A2">
       <option name="closed" value="true" />
@@ -110,7 +143,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699454311870</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="A2 update colapse">
+      <option name="closed" value="true" />
+      <created>1699454687887</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1699454687887</updated>
+    </task>
+    <task id="LOCAL-00004" summary="A2 update colapse">
+      <option name="closed" value="true" />
+      <created>1699454695349</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1699454695349</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,6 +168,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="A2" />
     <MESSAGE value="A2 update" />
-    <option name="LAST_COMMIT_MESSAGE" value="A2 update" />
+    <MESSAGE value="A2 update colapse" />
+    <option name="LAST_COMMIT_MESSAGE" value="A2 update colapse" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controller/Service.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -39,4 +39,11 @@ public class MyStack<T> implements StackInterface<T> {
     public void clear() {
         stack.clear();
     }
+    @Override
+    public Stack<T> getAll() {
+        Stack<T> copy = new Stack<>();
+        for(T element : stack)
+            copy.push(element);
+        return copy;
+    }
 }
