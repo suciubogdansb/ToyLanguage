@@ -11,7 +11,6 @@ import java.util.List;
 public class MemoryRepository implements RepositoryInterface{
     private List<ProgramState> programStates;
     int current;
-
     String logFilePath;
 
     public MemoryRepository(List<ProgramState> programStates) {

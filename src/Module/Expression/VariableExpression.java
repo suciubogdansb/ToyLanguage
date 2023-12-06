@@ -1,6 +1,7 @@
 package Module.Expression;
 
 import Module.Containers.DictionaryInterface;
+import Module.Containers.HeapInterface;
 import Module.Exception.DictionaryException;
 import Module.Exception.DivisionException;
 import Module.Exception.ExpressionException;
@@ -14,7 +15,8 @@ public class VariableExpression implements ExpressionInterface{
     }
 
     @Override
-    public ValueInterface evaluate(DictionaryInterface<String, ValueInterface> symbolTable) throws DictionaryException{
+    public ValueInterface evaluate(DictionaryInterface<String, ValueInterface> symbolTable,
+                                   HeapInterface<Integer, ValueInterface> heapTable) throws DictionaryException{
         if(!symbolTable.containsKey(id))
             throw new DictionaryException("Variable " + id + " not declared");
         return symbolTable.get(id);

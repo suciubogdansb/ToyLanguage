@@ -30,7 +30,8 @@ public class ReadStatement implements StatementInterface {
     }
 
     @Override
-    public ProgramState execute(ProgramState state) throws DictionaryException, TypeException, DivisionException, ExpressionException, IOException {
+    public ProgramState execute(ProgramState state) throws DictionaryException, TypeException, DivisionException,
+            ExpressionException, IOException, HeapException {
         StackInterface<StatementInterface> stack = state.getExecutionStack();
         DictionaryInterface<String, ValueInterface> symbolTable = state.getSymbolTable();
         FileTableInterface fileTable = state.getFileTable();
@@ -40,14 +41,12 @@ public class ReadStatement implements StatementInterface {
         if (!symbolTable.get(variableName).getType().equals(new IntType())) {
             throw new TypeException("Variable " + variableName + " is not of type int");
         }
-        ValueInterface value = expression.evaluate(symbolTable);
-        if (!value.getType().equals(new StringType())) {
+        ValueInterface value = expression.evaluate(symbolTable, state.getHeapTable());
+        if (!value.getType().equals(new StringType()))
             throw new ExpressionException("Expression " + expression.toString() + " does not evaluate to a string");
-        }
         StringValue stringValue = (StringValue) value;
-        if (!fileTable.containsKey(stringValue)) {
+        if (!fileTable.containsKey(stringValue))
             throw new ExpressionException("File " + stringValue.toString() + " not opened");
-        }
         BufferedReader fileDescriptor = fileTable.get(stringValue);
         try {
             String line = fileDescriptor.readLine();

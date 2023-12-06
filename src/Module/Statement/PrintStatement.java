@@ -5,6 +5,7 @@ import Module.Containers.StackInterface;
 import Module.Exception.DictionaryException;
 import Module.Exception.DivisionException;
 import Module.Exception.ExpressionException;
+import Module.Exception.HeapException;
 import Module.Expression.ExpressionInterface;
 import Module.ProgramState;
 import Module.Value.ValueInterface;
@@ -16,10 +17,11 @@ public class PrintStatement implements StatementInterface{
         this.expression = expression;
     }
 
-    public ProgramState execute(ProgramState state) throws DivisionException, ExpressionException, DictionaryException {
+    public ProgramState execute(ProgramState state) throws DivisionException, ExpressionException, DictionaryException,
+            HeapException {
         StackInterface<StatementInterface> stack = state.getExecutionStack();
         ListInterface<ValueInterface> out = state.getOutput();
-        out.add(expression.evaluate(state.getSymbolTable()));
+        out.add(expression.evaluate(state.getSymbolTable(), state.getHeapTable()));
         return state;
     }
 

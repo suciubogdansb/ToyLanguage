@@ -4,38 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61e5d0b-f5be-4eae-9772-0bd779882e73" name="Changes" comment="A2 update colapse">
-      <change afterPath="$PROJECT_DIR$/src/Module/Containers/FileTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Module/Containers/FileTableInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Module/Exception/RepositoryException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Module/Expression/RelationalExpression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Module/Statement/CloseReadStatement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Module/Statement/OpenReadStatement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Module/Statement/ReadStatement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Module/Type/StringType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Module/Value/StringValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/Commands/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/Commands/ExitCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/Commands/RunExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/TextMenu.java" afterDir="false" />
+    <list default="true" id="d61e5d0b-f5be-4eae-9772-0bd779882e73" name="Changes" comment="A3">
+      <change afterPath="$PROJECT_DIR$/src/Module/Containers/HeapInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Module/Containers/HeapTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Module/Exception/HeapException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Module/Expression/HeapReadExpression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Module/Statement/HeapAllocStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Module/Statement/HeapWriteStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Module/Statement/WhileStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Module/Type/ReferenceType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Module/Value/ReferenceValue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interpreter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interpreter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Module/Containers/DictionaryInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Containers/DictionaryInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Module/Containers/ListInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Containers/ListInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Module/Containers/MyDictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Containers/MyDictionary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Module/Containers/MyList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Containers/MyList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Module/Containers/MyStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Containers/MyStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Module/Containers/StackInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Containers/StackInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Expression/ArithmeticExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Expression/ArithmeticExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Expression/ExpressionInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Expression/ExpressionInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Expression/LogicalExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Expression/LogicalExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Expression/RelationalExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Expression/RelationalExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Expression/ValueExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Expression/ValueExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Expression/VariableExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Expression/VariableExpression.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Module/ProgramState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/ProgramState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Module/Statement/NOPStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/NOPStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/AssignStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/AssignStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/CloseReadStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/CloseReadStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/IfStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/IfStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/OpenReadStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/OpenReadStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/PrintStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/PrintStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/ReadStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/ReadStatement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Module/Statement/StatementInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/StatementInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Module/Value/BoolValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Value/BoolValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Module/Value/IntValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Value/IntValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Module/Value/ValueInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Value/ValueInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/MemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MemoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/RepositoryInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/RepositoryInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/OldUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/TextMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/TextMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +124,8 @@
       <workItem from="1699453671755" duration="1895000" />
       <workItem from="1700043213573" duration="134000" />
       <workItem from="1700043455374" duration="4534000" />
-      <workItem from="1700054460344" duration="7157000" />
+      <workItem from="1700054460344" duration="7200000" />
+      <workItem from="1701772505007" duration="13915000" />
     </task>
     <task id="LOCAL-00001" summary="A2">
       <option name="closed" value="true" />
@@ -159,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699454695349</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="A3">
+      <option name="closed" value="true" />
+      <created>1700145603111</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700145603112</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,15 +177,21 @@
     <MESSAGE value="A2" />
     <MESSAGE value="A2 update" />
     <MESSAGE value="A2 update colapse" />
-    <option name="LAST_COMMIT_MESSAGE" value="A2 update colapse" />
+    <MESSAGE value="A3" />
+    <option name="LAST_COMMIT_MESSAGE" value="A3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Controller/Service.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/src/Module/Statement/ReadStatement.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Module/Expression/HeapReadExpression.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

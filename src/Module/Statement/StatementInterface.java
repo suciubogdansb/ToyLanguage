@@ -4,7 +4,7 @@ import Module.Exception.*;
 import Module.ProgramState;
 
 public interface StatementInterface {
-    ProgramState execute(ProgramState state) throws DivisionException, ExpressionException, DictionaryException, TypeException, IOException;
+    ProgramState execute(ProgramState state) throws DivisionException, ExpressionException, DictionaryException, TypeException, IOException, HeapException;
 
     StatementInterface deepCopy();
 }

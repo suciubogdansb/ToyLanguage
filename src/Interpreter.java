@@ -1,11 +1,9 @@
 import Controller.Service;
-import Module.Expression.ArithmeticExpression;
-import Module.Expression.RelationalExpression;
-import Module.Expression.ValueExpression;
-import Module.Expression.VariableExpression;
+import Module.Expression.*;
 import Module.Statement.*;
 import Module.Type.BoolType;
 import Module.Type.IntType;
+import Module.Type.ReferenceType;
 import Module.Type.StringType;
 import Module.Value.BoolValue;
 import Module.Value.IntValue;
@@ -100,6 +98,72 @@ public class Interpreter {
         RepositoryInterface repo5 = new Repository.MemoryRepository(program5, "log5.txt");
         Service service5 = new Service(repo5);
 
+        StatementInterface example6 = new CompoundStatement(
+                new VariableStatement("v", new ReferenceType(new IntType())),
+                new CompoundStatement(
+                        new VariableStatement("a", new ReferenceType(new ReferenceType(new IntType()))),
+                        new CompoundStatement(
+                                new HeapAllocStatement("v", new ValueExpression(new IntValue(20))),
+                                new CompoundStatement(
+                                        new HeapAllocStatement("a", new VariableExpression("v")),
+                                        new CompoundStatement(
+                                                new PrintStatement(new HeapReadExpression(new HeapReadExpression(new ValueExpression(new StringValue("a"))))),
+                                                new CompoundStatement(
+                                                        new HeapWriteStatement("v", new ValueExpression(new IntValue(30))),
+                                                        new PrintStatement(new ArithmeticExpression("+", new HeapReadExpression(new ValueExpression(new StringValue("v"))), new ValueExpression(new IntValue(5))))
+                                                )
+                                        )
+                                )
+                        )
+                )
+        );
+        ProgramState program6 = new ProgramState(example6);
+        RepositoryInterface repo6 = new Repository.MemoryRepository(program6, "log6.txt");
+        Service service6 = new Service(repo6);
+
+        StatementInterface example7 = new CompoundStatement(
+                new VariableStatement("v", new IntType()),
+                new CompoundStatement(
+                        new AssignStatement("v", new ValueExpression(new IntValue(4))),
+                        new CompoundStatement(
+                                new WhileStatement(
+                                        new RelationalExpression(">", new VariableExpression("v"), new ValueExpression(new IntValue(0))),
+                                        new CompoundStatement(
+                                                new PrintStatement(new VariableExpression("v")),
+                                                new AssignStatement("v", new ArithmeticExpression("-", new VariableExpression("v"), new ValueExpression(new IntValue(1))))
+                                        )
+                                ),
+                                new PrintStatement(new ValueExpression(new StringValue("Done!")))
+                        )
+                )
+        );
+        ProgramState program7 = new ProgramState(example7);
+        RepositoryInterface repo7 = new Repository.MemoryRepository(program7, "log7.txt");
+        Service service7 = new Service(repo7);
+
+        StatementInterface example8 = new CompoundStatement(
+                new VariableStatement("v", new ReferenceType(new IntType())),
+                new CompoundStatement(
+                        new VariableStatement("a", new ReferenceType(new ReferenceType(new IntType()))),
+                        new CompoundStatement(
+                                new HeapAllocStatement("v", new ValueExpression(new IntValue(20))),
+                                new CompoundStatement(
+                                        new HeapAllocStatement("a", new VariableExpression("v")),
+                                        new CompoundStatement(
+                                                new PrintStatement(new HeapReadExpression(new HeapReadExpression(new ValueExpression(new StringValue("a"))))),
+                                                new CompoundStatement(
+                                                        new HeapAllocStatement("v", new ValueExpression(new IntValue(30))),
+                                                        new PrintStatement(new HeapReadExpression(new HeapReadExpression(new ValueExpression(new StringValue("a")))))
+                                                )
+                                        )
+                                )
+                        )
+                )
+        );
+        ProgramState program8 = new ProgramState(example8);
+        RepositoryInterface repo8 = new Repository.MemoryRepository(program8, "log8.txt");
+        Service service8 = new Service(repo8);
+
         TextMenu menu = new TextMenu();
         menu.add(new ExitCommand("0", "exit"));
         menu.add(new RunExample("1", example1.toString(), service1));
@@ -107,6 +171,9 @@ public class Interpreter {
         menu.add(new RunExample("3", example3.toString(), service3));
         menu.add(new RunExample("4", example4.toString(), service4));
         menu.add(new RunExample("5", example5.toString(), service5));
+        menu.add(new RunExample("6", example6.toString(), service6));
+        menu.add(new RunExample("7", example7.toString(), service7));
+        menu.add(new RunExample("8", example8.toString(), service8));
         menu.show();
     }
 }

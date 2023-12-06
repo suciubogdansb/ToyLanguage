@@ -1,9 +1,11 @@
 package Module.Expression;
 
 import Module.Containers.DictionaryInterface;
+import Module.Containers.HeapInterface;
 import Module.Exception.DictionaryException;
 import Module.Exception.DivisionException;
 import Module.Exception.ExpressionException;
+import Module.Exception.HeapException;
 import Module.Type.IntType;
 import Module.Value.IntValue;
 import Module.Value.ValueInterface;
@@ -44,13 +46,14 @@ public class ArithmeticExpression implements ExpressionInterface {
     }
 
     @Override
-    public ValueInterface evaluate(DictionaryInterface<String, ValueInterface> symbolTable) throws ExpressionException,
-            DivisionException, DictionaryException {
+    public ValueInterface evaluate(DictionaryInterface<String, ValueInterface> symbolTable,
+                                   HeapInterface<Integer, ValueInterface> heapTable)
+            throws ExpressionException, DivisionException, DictionaryException, HeapException {
         ValueInterface leftValue, rightValue;
-        leftValue = left.evaluate(symbolTable);
+        leftValue = left.evaluate(symbolTable, heapTable);
 
         if (leftValue.getType().equals(new IntType())) {
-            rightValue = right.evaluate(symbolTable);
+            rightValue = right.evaluate(symbolTable, heapTable);
             if (rightValue.getType().equals(new IntType())) {
                 IntValue leftInt = (IntValue) leftValue;
                 IntValue rightInt = (IntValue) rightValue;

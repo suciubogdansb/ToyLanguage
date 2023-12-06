@@ -1,10 +1,7 @@
 package Module.Statement;
 
 import Module.Containers.StackInterface;
-import Module.Exception.DictionaryException;
-import Module.Exception.DivisionException;
-import Module.Exception.ExpressionException;
-import Module.Exception.IOException;
+import Module.Exception.*;
 import Module.Expression.ExpressionInterface;
 import Module.ProgramState;
 import Module.Type.StringType;
@@ -24,9 +21,10 @@ public class OpenReadStatement implements StatementInterface {
     }
 
     @Override
-    public ProgramState execute(ProgramState state) throws DivisionException, ExpressionException, DictionaryException, IOException {
+    public ProgramState execute(ProgramState state) throws DivisionException, ExpressionException, DictionaryException,
+            IOException, HeapException {
         StackInterface<StatementInterface> stack = state.getExecutionStack();
-        ValueInterface value = expression.evaluate(state.getSymbolTable());
+        ValueInterface value = expression.evaluate(state.getSymbolTable(), state.getHeapTable());
         if (value.getType().equals(new StringType())) {
             StringValue stringValue = (StringValue) value;
             if (state.getFileTable().containsKey(stringValue)) {

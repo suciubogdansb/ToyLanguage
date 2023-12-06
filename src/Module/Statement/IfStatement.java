@@ -2,10 +2,7 @@ package Module.Statement;
 
 import Module.Containers.DictionaryInterface;
 import Module.Containers.StackInterface;
-import Module.Exception.DictionaryException;
-import Module.Exception.DivisionException;
-import Module.Exception.ExpressionException;
-import Module.Exception.TypeException;
+import Module.Exception.*;
 import Module.Expression.ExpressionInterface;
 import Module.ProgramState;
 import Module.Type.BoolType;
@@ -29,10 +26,10 @@ public class IfStatement implements StatementInterface {
 
     @Override
     public ProgramState execute(ProgramState state) throws DivisionException, ExpressionException, DictionaryException,
-            TypeException {
+            TypeException, HeapException {
         StackInterface<StatementInterface> stack = state.getExecutionStack();
         DictionaryInterface<String, ValueInterface> symbolTable = state.getSymbolTable();
-        ValueInterface conditionValue = condition.evaluate(symbolTable);
+        ValueInterface conditionValue = condition.evaluate(symbolTable, state.getHeapTable());
         if (conditionValue.getType().equals(new BoolType())) {
             BoolValue conditionValueBool = (BoolValue) conditionValue;
             if (conditionValueBool.getValue()) {

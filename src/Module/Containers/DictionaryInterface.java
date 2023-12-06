@@ -15,4 +15,6 @@ public interface DictionaryInterface<T1, T2> {
     void remove(T1 key);
 
     Vector<T1> getAll();
+
+    Map<T1, T2> getContent();
 }

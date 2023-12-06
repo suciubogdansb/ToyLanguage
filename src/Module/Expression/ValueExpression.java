@@ -1,6 +1,7 @@
 package Module.Expression;
 
 import Module.Containers.DictionaryInterface;
+import Module.Containers.HeapInterface;
 import Module.Exception.DivisionException;
 import Module.Exception.ExpressionException;
 import Module.Value.ValueInterface;
@@ -14,7 +15,8 @@ public class ValueExpression implements ExpressionInterface {
     }
 
     @Override
-    public ValueInterface evaluate(DictionaryInterface<String, ValueInterface> symbolTable) throws ExpressionException {
+    public ValueInterface evaluate(DictionaryInterface<String, ValueInterface> symbolTable,
+                                   HeapInterface<Integer, ValueInterface> heapTable) throws ExpressionException {
         return value;
     }
 

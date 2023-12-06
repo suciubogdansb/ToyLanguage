@@ -26,7 +26,7 @@ public class TextMenu {
         Scanner scanner = new Scanner(System.in);
         while(true){
             printMenu();
-            System.out.printf(">>");
+            System.out.printf(">> ");
             String key = scanner.nextLine();
             Command command = commands.get(key);
             if(command == null){

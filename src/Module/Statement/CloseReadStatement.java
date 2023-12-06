@@ -3,10 +3,7 @@ package Module.Statement;
 import Module.Containers.FileTable;
 import Module.Containers.FileTableInterface;
 import Module.Containers.StackInterface;
-import Module.Exception.DictionaryException;
-import Module.Exception.DivisionException;
-import Module.Exception.ExpressionException;
-import Module.Exception.IOException;
+import Module.Exception.*;
 import Module.Expression.ExpressionInterface;
 import Module.ProgramState;
 import Module.Type.StringType;
@@ -26,10 +23,11 @@ public class CloseReadStatement implements StatementInterface{
     }
 
     @Override
-    public ProgramState execute(ProgramState state) throws DivisionException, ExpressionException, DictionaryException, IOException {
+    public ProgramState execute(ProgramState state) throws DivisionException, ExpressionException, DictionaryException,
+            IOException, HeapException {
         StackInterface<StatementInterface> stack = state.getExecutionStack();
         FileTableInterface fileTable = state.getFileTable();
-        ValueInterface value = expression.evaluate(state.getSymbolTable());
+        ValueInterface value = expression.evaluate(state.getSymbolTable(), state.getHeapTable());
         if(!value.getType().equals(new StringType()))
             throw new ExpressionException("Expression " + expression.toString() + " does not evaluate to a string");
         StringValue stringValue = (StringValue) value;

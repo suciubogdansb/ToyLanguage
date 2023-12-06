@@ -51,4 +51,9 @@ public class MyDictionary<T1, T2> implements DictionaryInterface<T1, T2>{
             keys.add(key);
         return keys;
     }
+
+    @Override
+    public Map<T1, T2> getContent() {
+        return dictionary;
+    }
 }

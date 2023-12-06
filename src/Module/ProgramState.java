@@ -15,15 +15,18 @@ public class ProgramState {
     StackInterface<StatementInterface> executionStack;
     DictionaryInterface<String, ValueInterface> symbolTable;
     FileTableInterface fileTable;
+    HeapInterface<Integer, ValueInterface> heapTable;
     StatementInterface originalProgram;
 
     ProgramState(ListInterface<ValueInterface> out, StackInterface<StatementInterface> executionStack,
-                 DictionaryInterface<String, ValueInterface> symbolTable, FileTableInterface fileTable, StatementInterface originalProgram) {
+                 DictionaryInterface<String, ValueInterface> symbolTable, FileTableInterface fileTable,
+                 StatementInterface originalProgram, HeapInterface<Integer, ValueInterface> heapTable) {
         this.out = out;
         this.executionStack = executionStack;
         this.symbolTable = symbolTable;
         this.fileTable = fileTable;
         this.originalProgram = originalProgram.deepCopy();
+        this.heapTable = heapTable;
         this.executionStack.push(originalProgram);
     }
 
@@ -32,6 +35,7 @@ public class ProgramState {
         this.executionStack = new MyStack<StatementInterface>();
         this.symbolTable = new MyDictionary<String, ValueInterface>();
         this.fileTable = new FileTable();
+        this.heapTable = new HeapTable();
         this.originalProgram = originalProgram.deepCopy();
         this.executionStack.push(originalProgram);
     }
@@ -53,6 +57,10 @@ public class ProgramState {
         return fileTable;
     }
 
+    public HeapInterface<Integer, ValueInterface> getHeapTable() {
+        return heapTable;
+    }
+
     public void setExecutionStack(StackInterface<StatementInterface> executionStack) {
         this.executionStack = executionStack;
     }
@@ -69,12 +77,16 @@ public class ProgramState {
         this.fileTable = fileTable;
     }
 
+    public void setHeapTable(HeapInterface<Integer, ValueInterface> heapTable) {
+        this.heapTable = heapTable;
+    }
+
     @Override
     public String toString() {
         String programStateString = "------------------------------------------------\n";
         StringBuilder ExecutionStackString = new StringBuilder("ExeStack:\n");
         Stack<StatementInterface> executionStackCopy = this.executionStack.getAll();
-        while(!executionStackCopy.isEmpty()) {
+        while (!executionStackCopy.isEmpty()) {
             ExecutionStackString.append(executionStackCopy.pop().toString()).append("\n");
         }
         StringBuilder SymbolTableString = new StringBuilder("SymbolTable:\n");
@@ -90,9 +102,10 @@ public class ProgramState {
             OutputString.append(value.toString()).append("\n");
         StringBuilder FileTableString = new StringBuilder("FileTable:\n");
         for (StringValue key : fileTable.getAll()) {
-                FileTableString.append(key.toString()).append("\n");
+            FileTableString.append(key.toString()).append("\n");
         }
-        programStateString += ExecutionStackString.toString() + SymbolTableString.toString() + OutputString.toString() + FileTableString.toString();
+        programStateString += ExecutionStackString.toString() + SymbolTableString.toString() +
+                OutputString.toString() + FileTableString.toString() + heapTable.toString();
         return programStateString;
     }
 
