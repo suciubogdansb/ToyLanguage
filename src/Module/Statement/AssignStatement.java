@@ -35,7 +35,7 @@ public class AssignStatement implements StatementInterface {
         } else {
             throw new DictionaryException("Variable " + variableName + " not declared");
         }
-        return state;
+        return null;
     }
 
     public String toString() {

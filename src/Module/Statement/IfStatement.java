@@ -37,7 +37,7 @@ public class IfStatement implements StatementInterface {
             } else {
                 stack.push(elseStatement);
             }
-            return state;
+            return null;
         } else {
             throw new TypeException("Condition is not a boolean");
         }

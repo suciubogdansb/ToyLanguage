@@ -33,12 +33,15 @@ public class MemoryRepository implements RepositoryInterface{
     }
 
     @Override
-    public ProgramState getCurrentProgram() {
-        if(programStates.get(current).getExecutionStack().isEmpty())
-            programStates.get(current).reset();
-        return programStates.get(current);
+    public List<ProgramState> getProgramStates() {
+        return programStates;
+    }
+    @Override
+    public void setProgramStates(List<ProgramState> programStates) {
+        this.programStates = programStates;
     }
 
+    @Override
     public ProgramState getCurrentNoReset(){
         return programStates.get(current);
     }
@@ -63,6 +66,15 @@ public class MemoryRepository implements RepositoryInterface{
     public void logProgramStateExecution() throws RepositoryException{
         try(PrintWriter fileDescriptor = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath, true)));){
             fileDescriptor.println(this.getCurrentNoReset().toString());
+        }
+        catch (Exception e){
+            throw new RepositoryException(e.getMessage());
+        }
+    }
+    @Override
+    public void logProgramStateExecution(ProgramState programState) throws RepositoryException{
+        try(PrintWriter fileDescriptor = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath, true)));){
+            fileDescriptor.println(programState.toString());
         }
         catch (Exception e){
             throw new RepositoryException(e.getMessage());

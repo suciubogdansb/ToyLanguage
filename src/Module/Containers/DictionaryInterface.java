@@ -17,4 +17,6 @@ public interface DictionaryInterface<T1, T2> {
     Vector<T1> getAll();
 
     Map<T1, T2> getContent();
+
+    DictionaryInterface<T1, T2> deepCopy();
 }

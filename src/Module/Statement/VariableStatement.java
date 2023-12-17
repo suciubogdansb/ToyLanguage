@@ -25,7 +25,7 @@ public class VariableStatement implements StatementInterface{
         } else {
             symbolTable.put(name, type.defaultValue());
         }
-        return state;
+        return null;
     }
 
     @Override

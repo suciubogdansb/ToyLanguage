@@ -22,7 +22,7 @@ public class PrintStatement implements StatementInterface{
         StackInterface<StatementInterface> stack = state.getExecutionStack();
         ListInterface<ValueInterface> out = state.getOutput();
         out.add(expression.evaluate(state.getSymbolTable(), state.getHeapTable()));
-        return state;
+        return null;
     }
 
     public String toString() {

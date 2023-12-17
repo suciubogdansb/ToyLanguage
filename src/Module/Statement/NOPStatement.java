@@ -3,7 +3,7 @@ import Module.ProgramState;
 
 public class NOPStatement implements StatementInterface{
     public ProgramState execute(ProgramState state){
-        return state;
+        return null;
     }
 
     public NOPStatement(){}

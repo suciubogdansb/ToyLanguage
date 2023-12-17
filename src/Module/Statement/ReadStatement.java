@@ -58,7 +58,7 @@ public class ReadStatement implements StatementInterface {
         } catch (Exception e) {
             throw new IOException("Error reading from file " + stringValue.toString());
         }
-        return state;
+        return null;
     }
 
     @Override

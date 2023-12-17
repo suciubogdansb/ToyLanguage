@@ -42,7 +42,7 @@ public class HeapWriteStatement implements StatementInterface{
             throw new TypeException("Variable " + variableName + " is not a reference type to " + expressionValue.getType().toString());
         }
         heapTable.update(referenceAddress, expressionValue);
-        return state;
+        return null;
     }
 
     @Override

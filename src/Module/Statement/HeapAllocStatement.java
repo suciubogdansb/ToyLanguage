@@ -38,7 +38,7 @@ public class HeapAllocStatement implements StatementInterface {
         }
         int address = heapTable.add(expressionValue);
         symbolTable.put(variableName, new ReferenceValue(address, expressionValue.getType()));
-        return state;
+        return null;
     }
 
     @Override

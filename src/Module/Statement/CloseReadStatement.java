@@ -34,7 +34,7 @@ public class CloseReadStatement implements StatementInterface{
         if(!fileTable.containsKey(stringValue))
             throw new ExpressionException("File " + stringValue.toString() + " not opened");
         fileTable.close(stringValue);
-        return state;
+        return null;
     }
     @Override
     public StatementInterface deepCopy() {

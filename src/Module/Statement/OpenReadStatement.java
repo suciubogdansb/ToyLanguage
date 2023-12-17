@@ -35,7 +35,7 @@ public class OpenReadStatement implements StatementInterface {
         } else {
             throw new ExpressionException("Expression " + expression.toString() + " does not evaluate to a string");
         }
-        return state;
+        return null;
     }
 
     @Override

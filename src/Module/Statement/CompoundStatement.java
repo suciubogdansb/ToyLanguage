@@ -15,7 +15,7 @@ public class CompoundStatement implements StatementInterface{
         StackInterface<StatementInterface> stack= state.getExecutionStack();
         stack.push(second);
         stack.push(first);
-        return state;
+        return null;
     }
 
     @Override

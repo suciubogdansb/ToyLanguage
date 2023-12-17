@@ -1,8 +1,7 @@
 package Module;
 
 import Module.Containers.*;
-import Module.Exception.DictionaryException;
-import Module.Exception.StackException;
+import Module.Exception.*;
 import Module.Statement.StatementInterface;
 import Module.Value.StringValue;
 import Module.Value.ValueInterface;
@@ -18,7 +17,14 @@ public class ProgramState {
     HeapInterface<Integer, ValueInterface> heapTable;
     StatementInterface originalProgram;
 
-    ProgramState(ListInterface<ValueInterface> out, StackInterface<StatementInterface> executionStack,
+    static int counter = 0;
+    int id;
+
+    private static synchronized Integer getCounter() {
+        return counter++;
+    }
+
+    public ProgramState(ListInterface<ValueInterface> out, StackInterface<StatementInterface> executionStack,
                  DictionaryInterface<String, ValueInterface> symbolTable, FileTableInterface fileTable,
                  StatementInterface originalProgram, HeapInterface<Integer, ValueInterface> heapTable) {
         this.out = out;
@@ -27,6 +33,7 @@ public class ProgramState {
         this.fileTable = fileTable;
         this.originalProgram = originalProgram.deepCopy();
         this.heapTable = heapTable;
+        this.id = getCounter();
         this.executionStack.push(originalProgram);
     }
 
@@ -37,6 +44,7 @@ public class ProgramState {
         this.fileTable = new FileTable();
         this.heapTable = new HeapTable();
         this.originalProgram = originalProgram.deepCopy();
+        this.id = getCounter();
         this.executionStack.push(originalProgram);
     }
 
@@ -84,6 +92,7 @@ public class ProgramState {
     @Override
     public String toString() {
         String programStateString = "------------------------------------------------\n";
+        programStateString += "Program state " + id + ":\n";
         StringBuilder ExecutionStackString = new StringBuilder("ExeStack:\n");
         Stack<StatementInterface> executionStackCopy = this.executionStack.getAll();
         while (!executionStackCopy.isEmpty()) {
@@ -109,11 +118,24 @@ public class ProgramState {
         return programStateString;
     }
 
+    public ProgramState oneStep() throws StackException, DictionaryException,
+            DivisionException, HeapException, TypeException, IOException, ExpressionException {
+        if (executionStack.isEmpty()) {
+            throw new StackException("Execution stack is empty!");
+        }
+        StatementInterface currentStatement = executionStack.pop();
+        return currentStatement.execute(this);
+    }
+
     public void reset() {
         this.out.clear();
         this.executionStack.clear();
         this.symbolTable.clear();
         this.fileTable.clear();
         this.executionStack.push(originalProgram.deepCopy());
+    }
+
+    public Boolean isNotCompleted() {
+        return !executionStack.isEmpty();
     }
 }

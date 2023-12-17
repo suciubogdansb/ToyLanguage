@@ -15,8 +15,7 @@ public class RunExample extends Command {
     public void execute() {
         try {
             this.service.allStep();
-        } catch (DivisionException | TypeException | StackException | ExpressionException | DictionaryException |
-                 IOException | RepositoryException e) {
+        } catch (ServiceException e) {
             System.out.println(e.getClass() + ": " + e.getMessage());
         } catch (Exception e) {
             System.out.println("Exception: " + e.getMessage());

@@ -46,14 +46,20 @@ public class MyDictionary<T1, T2> implements DictionaryInterface<T1, T2>{
 
     @Override
     public Vector<T1> getAll() {
-        Vector<T1> keys = new Vector<>();
-        for(T1 key : dictionary.keySet())
-            keys.add(key);
-        return keys;
+        return new Vector<>(dictionary.keySet());
     }
 
     @Override
     public Map<T1, T2> getContent() {
         return dictionary;
+    }
+
+    @Override
+    public DictionaryInterface<T1, T2> deepCopy() {
+        Map<T1, T2> newDictionary = new HashMap<>();
+        for (T1 key : dictionary.keySet()) {
+            newDictionary.put(key, dictionary.get(key));
+        }
+        return new MyDictionary<>(newDictionary);
     }
 }
