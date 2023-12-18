@@ -1,16 +1,12 @@
 package Controller;
 
 import Module.Containers.DictionaryInterface;
-import Module.Containers.StackInterface;
 import Module.Exception.*;
-import Module.Statement.NOPStatement;
-import Module.Statement.StatementInterface;
 import Module.Value.ReferenceValue;
 import Module.Value.ValueInterface;
 import Repository.MemoryRepository;
 import Repository.RepositoryInterface;
 import Module.ProgramState;
-import com.sun.source.tree.BreakTree;
 
 import java.util.*;
 import java.util.concurrent.Callable;
@@ -33,16 +29,16 @@ public class Service {
         this.repository = new MemoryRepository();
     }
 
-    public void addProgram(String programString) {
-        programString = programString.toLowerCase();
-        List<String> statements = new ArrayList<>(Arrays.asList(programString.split("[^(].*\\s*;\\s*.*[^)]")));
-        List<StatementInterface> statementList = new ArrayList<>();
-        for (String statement : statements) {
-            if (statement.isEmpty())
-                statementList.add(new NOPStatement());
-            //else if(statement.)
-        }
-    }
+//    public void addProgram(String programString) {
+//        programString = programString.toLowerCase();
+//        List<String> statements = new ArrayList<>(Arrays.asList(programString.split("[^(].*\\s*;\\s*.*[^)]")));
+//        List<StatementInterface> statementList = new ArrayList<>();
+//        for (String statement : statements) {
+//            if (statement.isEmpty())
+//                statementList.add(new NOPStatement());
+//            //else if(statement.)
+//        }
+//    }
 
 
     Map<Integer, ValueInterface> garbageCollector(Set<Integer> symbolTableAddresses, Map<Integer, ValueInterface> heapTable) {

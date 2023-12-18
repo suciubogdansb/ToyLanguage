@@ -4,32 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61e5d0b-f5be-4eae-9772-0bd779882e73" name="Changes" comment="A4">
-      <change afterPath="$PROJECT_DIR$/src/Module/Exception/ServiceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Module/Statement/ForkStatement.java" afterDir="false" />
+    <list default="true" id="d61e5d0b-f5be-4eae-9772-0bd779882e73" name="Changes" comment="A5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Module/Containers/DictionaryInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Containers/DictionaryInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Module/Containers/MyDictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Containers/MyDictionary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Module/ProgramState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/ProgramState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Module/Statement/AssignStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/AssignStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Module/Statement/CloseReadStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/CloseReadStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Module/Statement/CompoundStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/CompoundStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Module/Statement/HeapAllocStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/HeapAllocStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Module/Statement/HeapWriteStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/HeapWriteStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Module/Statement/IfStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/IfStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Module/Statement/NOPStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/NOPStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Module/Statement/OpenReadStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/OpenReadStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Module/Statement/PrintStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/PrintStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Module/Statement/ReadStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/ReadStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Module/Statement/VariableStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/VariableStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Module/Statement/WhileStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/WhileStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/MemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MemoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/RepositoryInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/RepositoryInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Commands/RunExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Commands/RunExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/OldUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/OldUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +38,9 @@
         <option name="url" value="https://github.com/suciubogdansb/ToyLanguage" />
       </UrlAndAccount>
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/Interpreter.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -124,7 +104,10 @@
       <workItem from="1701873479768" duration="1237000" />
       <workItem from="1702476670072" duration="1006000" />
       <workItem from="1702563581828" duration="21000" />
-      <workItem from="1702816768099" duration="7724000" />
+      <workItem from="1702816768099" duration="8141000" />
+      <workItem from="1702915660505" duration="612000" />
+      <workItem from="1702916279471" duration="158000" />
+      <workItem from="1702916442655" duration="562000" />
     </task>
     <task id="LOCAL-00001" summary="A2">
       <option name="closed" value="true" />
@@ -174,7 +157,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701869428041</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="A5">
+      <option name="closed" value="true" />
+      <created>1702839983643</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1702839983644</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,7 +177,8 @@
     <MESSAGE value="A2 update colapse" />
     <MESSAGE value="A3" />
     <MESSAGE value="A4" />
-    <option name="LAST_COMMIT_MESSAGE" value="A4" />
+    <MESSAGE value="A5" />
+    <option name="LAST_COMMIT_MESSAGE" value="A5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -200,6 +192,11 @@
           <url>file://$PROJECT_DIR$/src/Module/Expression/HeapReadExpression.java</url>
           <line>30</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Interpreter.java</url>
+          <line>255</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/Module/Statement/ForkStatement.java</url>

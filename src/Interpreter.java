@@ -234,6 +234,30 @@ public class Interpreter {
         RepositoryInterface repo10 = new Repository.MemoryRepository(program10, "log10.txt");
         Service service10 = new Service(repo10);
 
+        StatementInterface example11 = new CompoundStatement(
+                new VariableStatement("a", new ReferenceType(new IntType())),
+                new CompoundStatement(
+                        new VariableStatement("counter", new IntType()),
+                        new WhileStatement(
+                                new RelationalExpression("<", new VariableExpression("counter"), new ValueExpression(new IntValue(10))),
+                                new CompoundStatement(
+                                        new ForkStatement(
+                                                new ForkStatement(
+                                                        new CompoundStatement(
+                                                                new HeapAllocStatement("a", new VariableExpression("counter")),
+                                                                new PrintStatement(new HeapReadExpression(new ValueExpression(new StringValue("a"))))
+                                                        )
+                                                )
+                                        ),
+                                        new AssignStatement("counter", new ArithmeticExpression("+", new VariableExpression("counter"), new ValueExpression(new IntValue(1))))
+                                )
+                        )
+                )
+        );
+        ProgramState program11 = new ProgramState(example11);
+        RepositoryInterface repo11 = new Repository.MemoryRepository(program11, "log11.txt");
+        Service service11 = new Service(repo11);
+
         TextMenu menu = new TextMenu();
         menu.add(new ExitCommand("0", "exit"));
         menu.add(new RunExample("1", example1.toString(), service1));
@@ -246,6 +270,7 @@ public class Interpreter {
         menu.add(new RunExample("8", example8.toString(), service8));
         menu.add(new RunExample("9", example9.toString(), service9));
         menu.add(new RunExample("10", example10.toString(), service10));
+        menu.add(new RunExample("11", example11.toString(), service11));
         menu.show();
     }
 }
