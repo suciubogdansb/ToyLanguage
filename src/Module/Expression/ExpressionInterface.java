@@ -2,10 +2,8 @@ package Module.Expression;
 
 import Module.Containers.DictionaryInterface;
 import Module.Containers.HeapInterface;
-import Module.Exception.DictionaryException;
-import Module.Exception.DivisionException;
-import Module.Exception.ExpressionException;
-import Module.Exception.HeapException;
+import Module.Exception.*;
+import Module.Type.TypeInterface;
 import Module.Value.ValueInterface;
 
 public interface ExpressionInterface {
@@ -14,4 +12,6 @@ public interface ExpressionInterface {
             throws DictionaryException, ExpressionException, DivisionException, HeapException;
 
     ExpressionInterface deepCopy();
+
+    TypeInterface getType(DictionaryInterface<String, TypeInterface> typeTable) throws ExpressionException, DictionaryException, TypeException;
 }

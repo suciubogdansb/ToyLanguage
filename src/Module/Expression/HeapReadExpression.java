@@ -2,12 +2,10 @@ package Module.Expression;
 
 import Module.Containers.DictionaryInterface;
 import Module.Containers.HeapInterface;
-import Module.Exception.DictionaryException;
-import Module.Exception.DivisionException;
-import Module.Exception.ExpressionException;
-import Module.Exception.HeapException;
+import Module.Exception.*;
 import Module.Type.ReferenceType;
 import Module.Type.StringType;
+import Module.Type.TypeInterface;
 import Module.Value.ReferenceValue;
 import Module.Value.StringValue;
 import Module.Value.ValueInterface;
@@ -50,5 +48,14 @@ public class HeapReadExpression implements ExpressionInterface{
     @Override
     public ExpressionInterface deepCopy() {
         return new HeapReadExpression(variableName);
+    }
+
+    @Override
+    public TypeInterface getType(DictionaryInterface<String, TypeInterface> typeTable) throws ExpressionException, DictionaryException, TypeException {
+        TypeInterface variableNameType = variableName.getType(typeTable);
+        if (variableNameType instanceof ReferenceType referenceType) {
+            return referenceType.getInner();
+        }
+        throw new TypeException("Variable " + variableName + " is not a reference type");
     }
 }

@@ -46,4 +46,14 @@ public class AssignStatement implements StatementInterface {
     public StatementInterface deepCopy() {
         return new AssignStatement(variableName, expression.deepCopy());
     }
+
+    @Override
+    public DictionaryInterface<String, TypeInterface> typeCheck(DictionaryInterface<String, TypeInterface> typeTable) throws TypeException, DictionaryException, ExpressionException {
+        TypeInterface variableType = typeTable.get(variableName);
+        TypeInterface expressionType = expression.getType(typeTable);
+        if (!variableType.equals(expressionType)) {
+            throw new TypeException("Left and right hand side of the assignment have different types");
+        }
+        return typeTable;
+    }
 }

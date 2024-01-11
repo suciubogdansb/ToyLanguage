@@ -1,7 +1,6 @@
 package Module.Statement;
 
 import Module.Containers.DictionaryInterface;
-import Module.Containers.FileTable;
 import Module.Containers.FileTableInterface;
 import Module.Containers.StackInterface;
 import Module.Exception.*;
@@ -9,6 +8,7 @@ import Module.Expression.ExpressionInterface;
 import Module.ProgramState;
 import Module.Type.IntType;
 import Module.Type.StringType;
+import Module.Type.TypeInterface;
 import Module.Value.IntValue;
 import Module.Value.StringValue;
 import Module.Value.ValueInterface;
@@ -64,6 +64,17 @@ public class ReadStatement implements StatementInterface {
     @Override
     public StatementInterface deepCopy() {
         return new ReadStatement(this.expression.deepCopy(), this.variableName);
+    }
+
+    @Override
+    public DictionaryInterface<String, TypeInterface> typeCheck(DictionaryInterface<String, TypeInterface> typeTable) throws ExpressionException, DictionaryException, TypeException {
+        TypeInterface expressionType = expression.getType(typeTable);
+        if(!expressionType.equals(new StringType()))
+            throw new ExpressionException("Expression " + expression.toString() + " does not evaluate to a string");
+        TypeInterface variableType = typeTable.get(variableName);
+        if(!variableType.equals(new IntType()))
+            throw new TypeException("Variable " + variableName + " is not of type int");
+        return typeTable;
     }
 
 

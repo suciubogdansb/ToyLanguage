@@ -7,6 +7,7 @@ import Module.Exception.*;
 import Module.Expression.ExpressionInterface;
 import Module.ProgramState;
 import Module.Type.ReferenceType;
+import Module.Type.TypeInterface;
 import Module.Value.ReferenceValue;
 import Module.Value.ValueInterface;
 
@@ -53,5 +54,15 @@ public class HeapWriteStatement implements StatementInterface{
     @Override
     public String toString() {
         return "wH(%s, %s)".formatted(variableName, expression.toString());
+    }
+
+    @Override
+    public DictionaryInterface<String, TypeInterface> typeCheck(DictionaryInterface<String, TypeInterface> typeTable) throws ExpressionException, DictionaryException, TypeException {
+        TypeInterface variableType = typeTable.get(variableName);
+        TypeInterface expressionType = expression.getType(typeTable);
+        if (!variableType.equals(new ReferenceType(expressionType))) {
+            throw new TypeException("Variable " + variableName + " is not a reference type to " + expressionType.toString());
+        }
+        return typeTable;
     }
 }

@@ -6,6 +6,7 @@ import Module.Exception.*;
 import Module.Expression.ExpressionInterface;
 import Module.ProgramState;
 import Module.Type.BoolType;
+import Module.Type.TypeInterface;
 import Module.Value.BoolValue;
 import Module.Value.ValueInterface;
 
@@ -41,5 +42,15 @@ public class WhileStatement implements StatementInterface {
     @Override
     public String toString() {
         return "( while (" + condition.toString() + ") do (" + statement.toString() + ") )";
+    }
+
+    @Override
+    public DictionaryInterface<String, TypeInterface> typeCheck(DictionaryInterface<String, TypeInterface> typeTable) throws ExpressionException, DictionaryException, TypeException {
+        TypeInterface conditionType = condition.getType(typeTable);
+        if (!conditionType.equals(new BoolType())) {
+            throw new ExpressionException("While condition is not a boolean");
+        }
+        statement.typeCheck(typeTable.deepCopy());
+        return typeTable;
     }
 }

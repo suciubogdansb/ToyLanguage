@@ -50,4 +50,14 @@ public class HeapAllocStatement implements StatementInterface {
     public String toString() {
         return "new(%s, %s)".formatted(variableName, expression.toString());
     }
+
+    @Override
+    public DictionaryInterface<String, TypeInterface> typeCheck(DictionaryInterface<String, TypeInterface> typeTable) throws ExpressionException, DictionaryException, TypeException {
+        TypeInterface variableType = typeTable.get(variableName);
+        TypeInterface expressionType = expression.getType(typeTable);
+        if (!variableType.equals(new ReferenceType(expressionType))) {
+            throw new TypeException("Variable " + variableName + " is not a reference type to " + expressionType.toString());
+        }
+        return typeTable;
+    }
 }

@@ -6,6 +6,7 @@ import Module.Exception.*;
 import Module.Expression.ExpressionInterface;
 import Module.ProgramState;
 import Module.Type.BoolType;
+import Module.Type.TypeInterface;
 import Module.Value.BoolValue;
 import Module.Value.ValueInterface;
 
@@ -46,6 +47,17 @@ public class IfStatement implements StatementInterface {
     @Override
     public StatementInterface deepCopy() {
         return new IfStatement(condition.deepCopy(), ifStatement.deepCopy(), elseStatement.deepCopy());
+    }
+
+    @Override
+    public DictionaryInterface<String, TypeInterface> typeCheck(DictionaryInterface<String, TypeInterface> typeTable) throws TypeException, DictionaryException, ExpressionException {
+        TypeInterface conditionType = condition.getType(typeTable);
+        if (!conditionType.equals(new BoolType())) {
+            throw new TypeException("If condition is not a boolean");
+        }
+        ifStatement.typeCheck(typeTable.deepCopy());
+        elseStatement.typeCheck(typeTable.deepCopy());
+        return typeTable;
     }
 }
 

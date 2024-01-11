@@ -5,6 +5,7 @@ import Module.Containers.HeapInterface;
 import Module.Exception.DictionaryException;
 import Module.Exception.DivisionException;
 import Module.Exception.ExpressionException;
+import Module.Type.TypeInterface;
 import Module.Value.ValueInterface;
 
 public class VariableExpression implements ExpressionInterface{
@@ -30,5 +31,12 @@ public class VariableExpression implements ExpressionInterface{
     @Override
     public ExpressionInterface deepCopy() {
         return new VariableExpression(id);
+    }
+
+    @Override
+    public TypeInterface getType(DictionaryInterface<String, TypeInterface> typeTable) throws ExpressionException, DictionaryException {
+        if(!typeTable.containsKey(id))
+            throw new ExpressionException("Variable " + id + " not declared");
+        return typeTable.get(id);
     }
 }

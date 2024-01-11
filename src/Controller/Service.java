@@ -106,7 +106,7 @@ public class Service {
 //    }
 
     void oneStepAllPrograms(List<ProgramState> programList) throws ServiceException {
-        logProgramStates(programList);
+//        logProgramStates(programList);
         List<Callable<ProgramState>> callList = programList.stream()
                 .map((ProgramState program) -> (Callable<ProgramState>)(program::oneStep))
                 .toList();
@@ -142,7 +142,7 @@ public class Service {
             }
         }
         programList.addAll(newActualPrograms);
-        logProgramStates(programList);
+//        logProgramStates(programList);
         repository.setProgramStates(programList);
     }
 
@@ -162,15 +162,16 @@ public class Service {
         List<ProgramState> programStateList = removeCompletedPrograms(repository.getProgramStates());
         logProgramStates(programStateList);
         while(!programStateList.isEmpty()){
+            oneStepAllPrograms(programStateList);
             programStateList.get(0).getHeapTable().setContent(
                     garbageCollector(
                             getAddressesFromSymbolTable(
                                     programStateList.
-                                        stream().
-                                        map(ProgramState::getSymbolTable).
-                                        map(DictionaryInterface::getContent).
-                                        map(Map::values).
-                                        toList(),
+                                            stream().
+                                            map(ProgramState::getSymbolTable).
+                                            map(DictionaryInterface::getContent).
+                                            map(Map::values).
+                                            toList(),
                                     programStateList.
                                             get(0).
                                             getHeapTable().
@@ -182,7 +183,7 @@ public class Service {
                                     getContent()
                     )
             );
-            oneStepAllPrograms(programStateList);
+            logProgramStates(programStateList);
             programStateList = removeCompletedPrograms(repository.getProgramStates());
         }
         executor.shutdownNow();

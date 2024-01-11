@@ -4,6 +4,7 @@ import Module.Containers.DictionaryInterface;
 import Module.Containers.HeapInterface;
 import Module.Exception.DivisionException;
 import Module.Exception.ExpressionException;
+import Module.Type.TypeInterface;
 import Module.Value.ValueInterface;
 import com.sun.jdi.Value;
 
@@ -28,5 +29,10 @@ public class ValueExpression implements ExpressionInterface {
     @Override
     public ExpressionInterface deepCopy() {
         return new ValueExpression(value.deepCopy());
+    }
+
+    @Override
+    public TypeInterface getType(DictionaryInterface<String, TypeInterface> typeTable) throws ExpressionException {
+        return value.getType();
     }
 }

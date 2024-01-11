@@ -4,9 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61e5d0b-f5be-4eae-9772-0bd779882e73" name="Changes" comment="A5">
+    <list default="true" id="d61e5d0b-f5be-4eae-9772-0bd779882e73" name="Changes" comment="A5 added new example">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interpreter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Expression/ArithmeticExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Expression/ArithmeticExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Expression/ExpressionInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Expression/ExpressionInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Expression/HeapReadExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Expression/HeapReadExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Expression/LogicalExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Expression/LogicalExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Expression/RelationalExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Expression/RelationalExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Expression/ValueExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Expression/ValueExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Expression/VariableExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Expression/VariableExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/AssignStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/AssignStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/CloseReadStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/CloseReadStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/CompoundStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/CompoundStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/ForkStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/ForkStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/HeapAllocStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/HeapAllocStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/HeapWriteStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/HeapWriteStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/IfStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/IfStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/NOPStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/NOPStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/OpenReadStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/OpenReadStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/PrintStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/PrintStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/ReadStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/ReadStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/StatementInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/StatementInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/VariableStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/VariableStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Module/Statement/WhileStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Module/Statement/WhileStatement.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +129,9 @@
       <workItem from="1702816768099" duration="8141000" />
       <workItem from="1702915660505" duration="612000" />
       <workItem from="1702916279471" duration="158000" />
-      <workItem from="1702916442655" duration="562000" />
+      <workItem from="1702916442655" duration="2861000" />
+      <workItem from="1704831902786" duration="3704000" />
+      <workItem from="1704895737551" duration="1820000" />
     </task>
     <task id="LOCAL-00001" summary="A2">
       <option name="closed" value="true" />
@@ -165,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702839983644</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="A5 added new example">
+      <option name="closed" value="true" />
+      <created>1702921508013</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1702921508013</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,7 +210,8 @@
     <MESSAGE value="A3" />
     <MESSAGE value="A4" />
     <MESSAGE value="A5" />
-    <option name="LAST_COMMIT_MESSAGE" value="A5" />
+    <MESSAGE value="A5 added new example" />
+    <option name="LAST_COMMIT_MESSAGE" value="A5 added new example" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -189,23 +222,14 @@
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Module/Expression/HeapReadExpression.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="9" />
+          <url>file://$PROJECT_DIR$/src/Interpreter.java</url>
+          <line>322</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Interpreter.java</url>
-          <line>255</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Module/Statement/ForkStatement.java</url>
-          <line>14</line>
-          <properties class="Module.Statement.ForkStatement" method="execute">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="12" />
+          <line>156</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

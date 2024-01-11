@@ -2,15 +2,15 @@ package Module.Expression;
 
 import Module.Containers.DictionaryInterface;
 import Module.Containers.HeapInterface;
-import Module.Exception.DictionaryException;
-import Module.Exception.DivisionException;
-import Module.Exception.ExpressionException;
-import Module.Exception.HeapException;
+import Module.Exception.*;
 import Module.Type.BoolType;
 import Module.Type.IntType;
+import Module.Type.TypeInterface;
 import Module.Value.BoolValue;
 import Module.Value.IntValue;
 import Module.Value.ValueInterface;
+
+import javax.swing.text.StyledEditorKit;
 
 public class LogicalExpression implements ExpressionInterface{
     ExpressionInterface left;
@@ -74,5 +74,21 @@ public class LogicalExpression implements ExpressionInterface{
     @Override
     public ExpressionInterface deepCopy() {
         return new LogicalExpression(left.deepCopy(), right.deepCopy(), operator);
+    }
+
+    @Override
+    public TypeInterface getType(DictionaryInterface<String, TypeInterface> typeTable) throws ExpressionException, DictionaryException, TypeException {
+        TypeInterface leftType, rightType;
+        leftType = left.getType(typeTable);
+        if (leftType.equals(new BoolType())) {
+            rightType = right.getType(typeTable);
+            if (rightType.equals(new BoolType())) {
+                return new BoolType();
+            } else {
+                throw new ExpressionException("Second operand is not an bool");
+            }
+        } else {
+            throw new ExpressionException("First operand is not an bool");
+        }
     }
 }

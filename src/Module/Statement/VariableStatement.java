@@ -37,4 +37,10 @@ public class VariableStatement implements StatementInterface{
     public StatementInterface deepCopy() {
         return new VariableStatement(name, type);
     }
+
+    @Override
+    public DictionaryInterface<String, TypeInterface> typeCheck(DictionaryInterface<String, TypeInterface> typeTable) {
+        typeTable.put(name, type);
+        return typeTable;
+    }
 }

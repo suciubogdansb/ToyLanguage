@@ -1,10 +1,14 @@
 package Module.Statement;
 
 import Module.Containers.*;
+import Module.Exception.DictionaryException;
+import Module.Exception.ExpressionException;
+import Module.Exception.TypeException;
 import Module.ProgramState;
+import Module.Type.TypeInterface;
 import Module.Value.ValueInterface;
 
-public class ForkStatement implements StatementInterface{
+public class ForkStatement implements StatementInterface {
     private StatementInterface statement;
 
     public ForkStatement(StatementInterface statement) {
@@ -12,7 +16,7 @@ public class ForkStatement implements StatementInterface{
     }
 
     @Override
-    public ProgramState execute (ProgramState state) {
+    public ProgramState execute(ProgramState state) {
         StackInterface<StatementInterface> stack = state.getExecutionStack();
         ListInterface<ValueInterface> out = state.getOutput();
         StackInterface<StatementInterface> forkStack = new MyStack<>();
@@ -30,5 +34,12 @@ public class ForkStatement implements StatementInterface{
     @Override
     public StatementInterface deepCopy() {
         return new ForkStatement(statement.deepCopy());
+    }
+
+    @Override
+    public DictionaryInterface<String, TypeInterface> typeCheck(DictionaryInterface<String, TypeInterface> typeTable)
+            throws TypeException, ExpressionException, DictionaryException {
+        statement.typeCheck(typeTable.deepCopy());
+        return typeTable;
     }
 }
