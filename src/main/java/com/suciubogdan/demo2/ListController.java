@@ -43,7 +43,7 @@ public class ListController {
             try {
                 statement.typeCheck(new MyDictionary<>());
                 ProgramState programState = new ProgramState(statement);
-                RepositoryInterface repository = new MemoryRepository(programState, "log11.txt");
+                RepositoryInterface repository = new MemoryRepository(programState, "log%d.txt".formatted(index));
                 Service service = new Service(repository);
                 programController.setController(service);
             } catch (Exception e) {

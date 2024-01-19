@@ -150,6 +150,7 @@ public class Service {
     public void oneStepForGUI() throws ServiceException {
         executor = Executors.newFixedThreadPool(2);
         List<ProgramState> programStateList = removeCompletedPrograms(repository.getProgramStates());
+        logProgramStates(programStateList);
         ProgramState programState = programStateList.get(0);
         programState.getHeapTable().setContent(
                 garbageCollector(
@@ -171,6 +172,7 @@ public class Service {
         );
         oneStepAllPrograms(repository.getProgramStates());
         repository.setProgramStates(removeCompletedPrograms(repository.getProgramStates()));
+        logProgramStates(repository.getProgramStates());
         executor.shutdownNow();
     }
 
