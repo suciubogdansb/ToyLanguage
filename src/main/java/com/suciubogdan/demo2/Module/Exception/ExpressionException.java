@@ -1,0 +1,7 @@
+package com.suciubogdan.demo2.Module.Exception;
+
+public class ExpressionException extends Exception{
+    public ExpressionException(String message){
+        super(message);
+    }
+}
