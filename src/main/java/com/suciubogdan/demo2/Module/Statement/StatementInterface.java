@@ -6,7 +6,7 @@ import com.suciubogdan.demo2.Module.ProgramState;
 import com.suciubogdan.demo2.Module.Type.TypeInterface;
 
 public interface StatementInterface {
-    ProgramState execute(ProgramState state) throws DivisionException, ExpressionException, DictionaryException, TypeException, IOException, HeapException;
+    ProgramState execute(ProgramState state) throws DivisionException, ExpressionException, DictionaryException, TypeException, IOException, HeapException, LatchException;
     StatementInterface deepCopy();
 
     DictionaryInterface<String, TypeInterface> typeCheck(DictionaryInterface<String, TypeInterface> typeTable) throws TypeException, ExpressionException, DictionaryException;

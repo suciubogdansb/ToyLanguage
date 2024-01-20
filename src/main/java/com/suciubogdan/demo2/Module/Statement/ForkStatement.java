@@ -9,7 +9,7 @@ import com.suciubogdan.demo2.Module.Type.TypeInterface;
 import com.suciubogdan.demo2.Module.Value.ValueInterface;
 
 public class ForkStatement implements StatementInterface {
-    private StatementInterface statement;
+    private final StatementInterface statement;
 
     public ForkStatement(StatementInterface statement) {
         this.statement = statement;
@@ -23,7 +23,8 @@ public class ForkStatement implements StatementInterface {
         DictionaryInterface<String, ValueInterface> symbolTableClone = state.getSymbolTable().deepCopy();
         FileTableInterface fileTable = state.getFileTable();
         HeapInterface<Integer, ValueInterface> heap = state.getHeapTable();
-        return new ProgramState(out, forkStack, symbolTableClone, fileTable, statement, heap);
+        LatchInterface<Integer, Integer> latchTable = state.getLatchTable();
+        return new ProgramState(out, forkStack, symbolTableClone, fileTable, statement, heap, latchTable);
     }
 
     @Override

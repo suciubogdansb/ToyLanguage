@@ -18,7 +18,7 @@ public class VariableStatement implements StatementInterface{
 
     @Override
     public ProgramState execute(ProgramState state) throws DictionaryException {
-        StackInterface<StatementInterface> stack= state.getExecutionStack();
+        StackInterface<StatementInterface> stack = state.getExecutionStack();
         DictionaryInterface<String, ValueInterface> symbolTable = state.getSymbolTable();
         if (symbolTable.containsKey(name)) {
             throw new DictionaryException("Variable " + name + " already declared");

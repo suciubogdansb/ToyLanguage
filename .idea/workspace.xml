@@ -4,112 +4,70 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e1f4663-e188-4e58-93f0-74fdee9375e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Controller/Service.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/ListController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Containers/DictionaryInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Containers/FileTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Containers/FileTableInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Containers/HeapInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Containers/HeapTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Containers/ListInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Containers/MyDictionary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Containers/MyList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Containers/MyStack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Containers/StackInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Exception/DictionaryException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Exception/DivisionException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Exception/ExpressionException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Exception/HeapException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Exception/IOException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Exception/ListException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Exception/RepositoryException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Exception/ServiceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Exception/StackException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Exception/TypeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Expression/ArithmeticExpression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Expression/ExpressionInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Expression/HeapReadExpression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Expression/LogicalExpression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Expression/RelationalExpression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Expression/ValueExpression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Expression/VariableExpression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/ProgramState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/AssignStatement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/CloseReadStatement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/CompoundStatement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/ForkStatement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/HeapAllocStatement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/HeapWriteStatement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/IfStatement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/NOPStatement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/OpenReadStatement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/PrintStatement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/ReadStatement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/StatementInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/VariableStatement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/WhileStatement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Type/BoolType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Type/IntType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Type/ReferenceType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Type/StringType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Type/TypeInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Value/BoolValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Value/IntValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Value/ReferenceValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Value/StringValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Value/ValueInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/ProgramController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Repository/MemoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Repository/RepositoryInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/suciubogdan/demo2/list.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/suciubogdan/demo2/program.fxml" afterDir="false" />
+    <list default="true" id="8e1f4663-e188-4e58-93f0-74fdee9375e9" name="Changes" comment="A7: add logging">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Containers/LatchInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Containers/LatchTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Exception/LatchException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Expression/NotExpression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/AwaitStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/CountDownStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/LatchCreateStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/RepeatStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/ListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/ListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/ProgramState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/ProgramState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/ForkStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/ForkStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/StatementInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/StatementInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/VariableStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/VariableStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/WhileStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/Module/Statement/WhileStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/ProgramController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/ProgramController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/suciubogdan/demo2/program.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/suciubogdan/demo2/program.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2b5e7cdJDjWGtaOS8Nl5bG1l6Xz" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/bogdan/IdeaProjects/demo2/src/main/resources/com/suciubogdan/demo2",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/bogdan/IdeaProjects/demo2/src/main/resources/com/suciubogdan/demo2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.suciubogdan.demo2.Module.Exception" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/com/suciubogdan/demo2" />
       <recent name="$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2" />
@@ -124,21 +82,49 @@
       <option name="presentableId" value="Default" />
       <updated>1705509205521</updated>
       <workItem from="1705509206716" duration="5026000" />
+      <workItem from="1705679802581" duration="3446000" />
+      <workItem from="1705684398394" duration="9834000" />
     </task>
+    <task id="LOCAL-00001" summary="A7: Toy language with GUI">
+      <option name="closed" value="true" />
+      <created>1705679831329</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1705679831329</updated>
+    </task>
+    <task id="LOCAL-00002" summary="A7: add logging">
+      <option name="closed" value="true" />
+      <created>1705680213734</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1705680213734</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="A7: Toy language with GUI" />
+    <MESSAGE value="A7: add logging" />
+    <option name="LAST_COMMIT_MESSAGE" value="A7: add logging" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/suciubogdan/demo2/ProgramController.java</url>
-          <line>90</line>
+          <line>99</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

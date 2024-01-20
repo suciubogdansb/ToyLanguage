@@ -41,7 +41,7 @@ public class WhileStatement implements StatementInterface {
 
     @Override
     public String toString() {
-        return "( while (" + condition.toString() + ") do (" + statement.toString() + ") )";
+        return "while (" + condition.toString() + ") do (" + statement.toString() + ")";
     }
 
     @Override

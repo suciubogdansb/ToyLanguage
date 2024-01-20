@@ -12,6 +12,7 @@ import com.suciubogdan.demo2.Repository.MemoryRepository;
 import com.suciubogdan.demo2.Repository.RepositoryInterface;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.scene.PerspectiveCamera;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 
@@ -47,7 +48,7 @@ public class ListController {
                 Service service = new Service(repository);
                 programController.setController(service);
             } catch (Exception e) {
-                System.out.println("Error in example 11: " + e.getMessage());
+                System.out.println("Error in example %d: ".formatted(index) + e.getMessage());
             }
 //
 //            ProgramState state = new ProgramState(examples.get(index));
@@ -276,6 +277,105 @@ public class ListController {
                 )
         );
 
+        StatementInterface example12 = new CompoundStatement(
+                new VariableStatement("v1", new ReferenceType(new IntType())),
+                new CompoundStatement(
+                        new VariableStatement("v2", new ReferenceType(new IntType())),
+                        new CompoundStatement(
+                                new VariableStatement("v3", new ReferenceType(new IntType())),
+                                new CompoundStatement(
+                                        new HeapAllocStatement("v1", new ValueExpression(new IntValue(2))),
+                                        new CompoundStatement(
+                                                new HeapAllocStatement("v2", new ValueExpression(new IntValue(3))),
+                                                new CompoundStatement(
+                                                        new HeapAllocStatement("v3", new ValueExpression(new IntValue(4))),
+                                                        new CompoundStatement(
+                                                                new LatchCreateStatement("cnt", new HeapReadExpression(new VariableExpression("v2"))),
+                                                                new CompoundStatement(
+                                                                        new ForkStatement(
+                                                                                new CompoundStatement(
+                                                                                        new HeapWriteStatement("v1", new ArithmeticExpression("*", new HeapReadExpression(new VariableExpression("v1")), new ValueExpression(new IntValue(10)))),
+                                                                                        new CompoundStatement(
+                                                                                                new PrintStatement(new HeapReadExpression(new VariableExpression("v1"))),
+                                                                                                new CountDownStatement("cnt")
+                                                                                        )
+                                                                                )
+                                                                        ),
+                                                                        new CompoundStatement(
+                                                                                new ForkStatement(
+                                                                                        new CompoundStatement(
+                                                                                                new HeapWriteStatement("v2", new ArithmeticExpression("*", new HeapReadExpression(new VariableExpression("v2")), new ValueExpression(new IntValue(10)))),
+                                                                                                new CompoundStatement(
+                                                                                                        new PrintStatement(new HeapReadExpression(new VariableExpression("v2"))),
+                                                                                                        new CountDownStatement("cnt")
+                                                                                                )
+                                                                                        )
+                                                                                ),
+                                                                                new CompoundStatement(
+                                                                                        new ForkStatement(
+                                                                                                new CompoundStatement(
+                                                                                                        new HeapWriteStatement("v3", new ArithmeticExpression("*", new HeapReadExpression(new VariableExpression("v3")), new ValueExpression(new IntValue(10)))),
+                                                                                                        new CompoundStatement(
+                                                                                                                new PrintStatement(new HeapReadExpression(new VariableExpression("v3"))),
+                                                                                                                new CountDownStatement("cnt")
+                                                                                                        )
+                                                                                                )
+                                                                                        ),
+                                                                                        new CompoundStatement(
+                                                                                                new AwaitStatement("cnt"),
+                                                                                                new CompoundStatement(
+                                                                                                        new PrintStatement(new ValueExpression(new IntValue(100))),
+                                                                                                        new CompoundStatement(
+                                                                                                                new CountDownStatement("cnt"),
+                                                                                                                new PrintStatement(new ValueExpression(new IntValue(100)))
+                                                                                                        )
+                                                                                                )
+                                                                                        )
+                                                                                )
+                                                                        )
+                                                                )
+                                                        )
+                                                )
+                                        )
+                                )
+                        )
+                )
+        );
+
+        StatementInterface example13 = new CompoundStatement(
+                new VariableStatement("v", new IntType()),
+                new CompoundStatement(
+                        new AssignStatement("v", new ValueExpression(new IntValue(0))),
+                        new CompoundStatement(
+                                new RepeatStatement(
+                                        new RelationalExpression("==", new VariableExpression("v"), new ValueExpression(new IntValue(3))),
+                                        new CompoundStatement(
+                                                new ForkStatement(
+                                                        new CompoundStatement(
+                                                                new PrintStatement(new VariableExpression("v")),
+                                                                new AssignStatement("v", new ArithmeticExpression("-", new VariableExpression("v"), new ValueExpression(new IntValue(1))))
+                                                        )
+                                                ),
+                                                new AssignStatement("v", new ArithmeticExpression("+", new VariableExpression("v"), new ValueExpression(new IntValue(1))))
+                                        )
+                                ),
+                                new CompoundStatement(
+                                        new NOPStatement(),
+                                        new CompoundStatement(
+                                                new NOPStatement(),
+                                                new CompoundStatement(
+                                                        new NOPStatement(),
+                                                        new CompoundStatement(
+                                                                new NOPStatement(),
+                                                                new PrintStatement(new ArithmeticExpression("*", new VariableExpression("v"), new ValueExpression(new IntValue(10))))
+                                                        )
+                                                )
+                                        )
+                                )
+                        )
+                )
+        );
+
         x.add(example1);
         x.add(example2);
         x.add(example3);
@@ -287,6 +387,8 @@ public class ListController {
         x.add(example9);
         x.add(example10);
         x.add(example11);
+        x.add(example12);
+        x.add(example13);
         return x;
     }
 }

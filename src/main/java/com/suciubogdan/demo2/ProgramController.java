@@ -1,16 +1,14 @@
 package com.suciubogdan.demo2;
 
 import com.suciubogdan.demo2.Controller.Service;
-import com.suciubogdan.demo2.Module.Containers.HeapInterface;
-import com.suciubogdan.demo2.Module.Containers.HeapTable;
-import com.suciubogdan.demo2.Module.Containers.ListInterface;
-import com.suciubogdan.demo2.Module.Containers.MyList;
+import com.suciubogdan.demo2.Module.Containers.*;
 import com.suciubogdan.demo2.Module.Exception.*;
 import com.suciubogdan.demo2.Module.ProgramState;
 import com.suciubogdan.demo2.Module.Statement.StatementInterface;
 import com.suciubogdan.demo2.Module.Value.StringValue;
 import com.suciubogdan.demo2.Module.Value.ValueInterface;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -63,6 +61,15 @@ public class ProgramController {
     private TableColumn<Pair<String, ValueInterface>, String> symValueColumn;
 
     @FXML
+    private TableView<Pair<Integer, Integer>> latchTable;
+
+    @FXML
+    private TableColumn<Pair<Integer, Integer>, Integer> latchAddressColumn;
+
+    @FXML
+    private TableColumn<Pair<Integer, Integer>, String> latchCountColumn;
+
+    @FXML
     private TextField numberOfProgramStates;
 
     @FXML
@@ -74,6 +81,8 @@ public class ProgramController {
         valueColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().second.toString()));
         symVariableColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().first));
         symValueColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().second.toString()));
+        latchAddressColumn.setCellValueFactory(p -> new SimpleIntegerProperty(p.getValue().first).asObject());
+        latchCountColumn.setCellValueFactory(p-> new SimpleStringProperty(p.getValue().second.toString()));
         oneStep.setOnAction(actionEvent -> {
             if(controller == null){
                 Alert alert = new Alert(Alert.AlertType.ERROR, "The program was not selected", ButtonType.OK);
@@ -119,6 +128,22 @@ public class ProgramController {
         populateFileTable();
         populateSymbolTable();
         populateExecutionStack();
+        populateLatch();
+    }
+
+    private void populateLatch(){
+        LatchInterface<Integer, Integer> latchT;
+        if(!controller.getProgramStates().isEmpty())
+            latchT = controller.getProgramStates().get(0).getLatchTable();
+        else
+            latchT = new LatchTable();
+        List<Pair<Integer, Integer>> latchTableList = new ArrayList<>();
+        for (Integer key : latchT.getContent().keySet())
+        {
+            latchTableList.add(new Pair<>(key, latchT.getContent().get(key)));
+        }
+        latchTable.setItems(FXCollections.observableList(latchTableList));
+        latchTable.refresh();
     }
 
     private void populateHeap() {
