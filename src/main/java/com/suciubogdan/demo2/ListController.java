@@ -276,6 +276,59 @@ public class ListController {
                 )
         );
 
+        StatementInterface example12 = new CompoundStatement(
+                new VariableStatement("v1", new ReferenceType(new IntType())),
+                new CompoundStatement(
+                        new VariableStatement("cnt", new IntType()),
+                        new CompoundStatement(
+                                new HeapAllocStatement("v1", new ValueExpression(new IntValue(1))),
+                                new CompoundStatement(
+                                        new SemaphoreStatement("cnt", new HeapReadExpression(new VariableExpression("v1"))),
+                                        new CompoundStatement(
+                                                new ForkStatement(
+                                                        new CompoundStatement(
+                                                                new AcquireStatement("cnt"),
+                                                                new CompoundStatement(
+                                                                        new HeapWriteStatement("v1", new ArithmeticExpression("*", new HeapReadExpression(new VariableExpression("v1")), new ValueExpression(new IntValue(10)))),
+                                                                        new CompoundStatement(
+                                                                                new PrintStatement(new HeapReadExpression(new VariableExpression("v1"))),
+                                                                                new ReleaseStatement("cnt")
+                                                                        )
+                                                                )
+                                                        )
+                                                ),
+                                                new CompoundStatement(
+                                                        new ForkStatement(
+                                                                new CompoundStatement(
+                                                                        new AcquireStatement("cnt"),
+                                                                        new CompoundStatement(
+                                                                                new HeapWriteStatement("v1", new ArithmeticExpression("*", new HeapReadExpression(new VariableExpression("v1")), new ValueExpression(new IntValue(10)))),
+                                                                                new CompoundStatement(
+                                                                                        new HeapWriteStatement("v1", new ArithmeticExpression("*", new HeapReadExpression(new VariableExpression("v1")), new ValueExpression(new IntValue(2)))),
+                                                                                        new CompoundStatement(
+                                                                                                new PrintStatement(new HeapReadExpression(new VariableExpression("v1"))),
+                                                                                                new ReleaseStatement("cnt")
+                                                                                        )
+                                                                                )
+                                                                        )
+                                                                )
+                                                        ),
+                                                        new CompoundStatement(
+                                                                new AcquireStatement("cnt"),
+                                                                new CompoundStatement(
+                                                                        new PrintStatement(
+                                                                                new ArithmeticExpression("-", new HeapReadExpression(new VariableExpression("v1")), new ValueExpression(new IntValue(1)))
+                                                                        ),
+                                                                        new ReleaseStatement("cnt")
+                                                                )
+                                                        )
+                                                )
+                                        )
+                                )
+                        )
+                )
+        );
+
         x.add(example1);
         x.add(example2);
         x.add(example3);
@@ -287,6 +340,7 @@ public class ListController {
         x.add(example9);
         x.add(example10);
         x.add(example11);
+        x.add(example12);
         return x;
     }
 }

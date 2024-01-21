@@ -1,10 +1,7 @@
 package com.suciubogdan.demo2;
 
 import com.suciubogdan.demo2.Controller.Service;
-import com.suciubogdan.demo2.Module.Containers.HeapInterface;
-import com.suciubogdan.demo2.Module.Containers.HeapTable;
-import com.suciubogdan.demo2.Module.Containers.ListInterface;
-import com.suciubogdan.demo2.Module.Containers.MyList;
+import com.suciubogdan.demo2.Module.Containers.*;
 import com.suciubogdan.demo2.Module.Exception.*;
 import com.suciubogdan.demo2.Module.ProgramState;
 import com.suciubogdan.demo2.Module.Statement.StatementInterface;
@@ -18,16 +15,6 @@ import javafx.scene.control.*;
 
 import java.util.*;
 import java.util.stream.Collectors;
-
-class Pair<T1, T2> {
-    T1 first;
-    T2 second;
-
-    public Pair(T1 first, T2 second) {
-        this.first = first;
-        this.second = second;
-    }
-}
 
 public class ProgramController {
     private Service controller;
@@ -66,6 +53,18 @@ public class ProgramController {
     private TextField numberOfProgramStates;
 
     @FXML
+    private TableView<Pair<Integer, Pair<Integer, String>>> semaphoreTable;
+
+    @FXML
+    private TableColumn<Pair<Integer, Pair<Integer, String>>, Integer> semAddress;
+
+    @FXML
+    private TableColumn<Pair<Integer, Pair<Integer, String>>, Integer> semCount;
+
+    @FXML
+    private TableColumn<Pair<Integer, Pair<Integer, String>>, String> semList;
+
+    @FXML
     private Button oneStep;
 
     @FXML
@@ -74,6 +73,9 @@ public class ProgramController {
         valueColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().second.toString()));
         symVariableColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().first));
         symValueColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().second.toString()));
+        semAddress.setCellValueFactory(p -> new SimpleIntegerProperty(p.getValue().first).asObject());
+        semCount.setCellValueFactory(p -> new SimpleIntegerProperty(p.getValue().second.first).asObject());
+        semList.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().second.second));
         oneStep.setOnAction(actionEvent -> {
             if(controller == null){
                 Alert alert = new Alert(Alert.AlertType.ERROR, "The program was not selected", ButtonType.OK);
@@ -119,8 +121,24 @@ public class ProgramController {
         populateFileTable();
         populateSymbolTable();
         populateExecutionStack();
+        populateSemaphore();
     }
 
+
+    private void populateSemaphore(){
+        SemaphoreInterface sems;
+        if (!controller.getProgramStates().isEmpty())
+            sems = controller.getProgramStates().get(0).getSemaphores();
+        else sems = new SemaphoreTable();
+        List<Pair<Integer, Pair<Integer, String>>> semsList = new ArrayList<>();
+        for (Integer key : sems.getContent().keySet()){
+            Pair<Integer, List<Integer>> pair = sems.getContent().get(key);
+            String listString = pair.second.toString();
+            semsList.add(new Pair<>(key, new Pair<>(pair.first, listString)));
+        }
+        semaphoreTable.setItems(FXCollections.observableList(semsList));
+        semaphoreTable.refresh();
+    }
     private void populateHeap() {
         HeapInterface heap;
         if (!controller.getProgramStates().isEmpty())

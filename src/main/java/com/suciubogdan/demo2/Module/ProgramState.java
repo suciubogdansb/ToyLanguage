@@ -16,6 +16,8 @@ public class ProgramState {
     HeapInterface<Integer, ValueInterface> heapTable;
     StatementInterface originalProgram;
 
+    SemaphoreInterface semaphores;
+
     static int counter = 0;
     int id;
 
@@ -29,13 +31,15 @@ public class ProgramState {
 
     public ProgramState(ListInterface<ValueInterface> out, StackInterface<StatementInterface> executionStack,
                  DictionaryInterface<String, ValueInterface> symbolTable, FileTableInterface fileTable,
-                 StatementInterface originalProgram, HeapInterface<Integer, ValueInterface> heapTable) {
+                 StatementInterface originalProgram, HeapInterface<Integer, ValueInterface> heapTable,
+                 SemaphoreInterface semaphores) {
         this.out = out;
         this.executionStack = executionStack;
         this.symbolTable = symbolTable;
         this.fileTable = fileTable;
         this.originalProgram = originalProgram.deepCopy();
         this.heapTable = heapTable;
+        this.semaphores = semaphores;
         this.id = getCounter();
         this.executionStack.push(originalProgram);
     }
@@ -46,6 +50,7 @@ public class ProgramState {
         this.symbolTable = new MyDictionary<String, ValueInterface>();
         this.fileTable = new FileTable();
         this.heapTable = new HeapTable();
+        this.semaphores = new SemaphoreTable();
         this.originalProgram = originalProgram.deepCopy();
         this.id = getCounter();
         this.executionStack.push(originalProgram);
@@ -72,6 +77,8 @@ public class ProgramState {
         return heapTable;
     }
 
+    public SemaphoreInterface getSemaphores(){return semaphores;}
+
     public void setExecutionStack(StackInterface<StatementInterface> executionStack) {
         this.executionStack = executionStack;
     }
@@ -91,6 +98,8 @@ public class ProgramState {
     public void setHeapTable(HeapInterface<Integer, ValueInterface> heapTable) {
         this.heapTable = heapTable;
     }
+
+    public void setGetSemaphores(SemaphoreInterface semaphores){this.semaphores = semaphores;}
 
     @Override
     public String toString() {
@@ -122,7 +131,7 @@ public class ProgramState {
     }
 
     public ProgramState oneStep() throws StackException, DictionaryException,
-            DivisionException, HeapException, TypeException, IOException, ExpressionException {
+            DivisionException, HeapException, TypeException, IOException, ExpressionException, SemaphoreException {
         if (executionStack.isEmpty()) {
             throw new StackException("Execution stack is empty!");
         }
