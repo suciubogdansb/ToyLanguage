@@ -149,6 +149,8 @@ public class Service {
 
     public void oneStepForGUI() throws ServiceException {
         executor = Executors.newFixedThreadPool(2);
+//        repository.setProgramStates(removeCompletedPrograms(repository.getProgramStates()));
+//        List<ProgramState> programStateList = repository.getProgramStates();
         List<ProgramState> programStateList = removeCompletedPrograms(repository.getProgramStates());
         logProgramStates(programStateList);
         ProgramState programState = programStateList.get(0);
@@ -171,8 +173,8 @@ public class Service {
                 )
         );
         oneStepAllPrograms(repository.getProgramStates());
-        repository.setProgramStates(removeCompletedPrograms(repository.getProgramStates()));
         logProgramStates(repository.getProgramStates());
+        repository.setProgramStates(removeCompletedPrograms(repository.getProgramStates()));
         executor.shutdownNow();
     }
 
@@ -221,7 +223,7 @@ public class Service {
     }
 
     public List<ProgramState> removeCompletedPrograms(List<ProgramState> programStateList) {
-        if (programStateList.size() == 1 && !programStateList.get(0).isNotCompleted())
+        if (programStateList.size() == programStateList.stream().filter(p -> !p.isNotCompleted()).count())
             return programStateList;
         return programStateList.stream().
                 filter(ProgramState::isNotCompleted).

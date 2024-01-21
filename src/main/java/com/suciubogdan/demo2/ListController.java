@@ -276,6 +276,128 @@ public class ListController {
                 )
         );
 
+        StatementInterface example12 = new CompoundStatement(
+                new VariableStatement("a", new ReferenceType(new IntType())),
+                new CompoundStatement(
+                        new HeapAllocStatement("a", new ValueExpression(new IntValue(20))),
+                        new CompoundStatement(
+                                new ForStatement("v",
+                                        new ValueExpression(new IntValue(0)),
+                                        new ValueExpression(new IntValue(3)),
+                                        new ArithmeticExpression("+",
+                                                new VariableExpression("v"),
+                                                new ValueExpression(new IntValue(1))),
+                                        new ForkStatement(new CompoundStatement(
+                                                new PrintStatement(new VariableExpression("v")),
+                                                new AssignStatement("v", new ArithmeticExpression(
+                                                        "*",
+                                                        new VariableExpression("v"),
+                                                        new HeapReadExpression(new VariableExpression("a"))
+                                                ))
+                                        ))),
+                                new PrintStatement(new HeapReadExpression(new VariableExpression("a")))
+
+                        )
+                )
+        );
+
+        StatementInterface example13 = new CompoundStatement(
+                new VariableStatement("v1", new ReferenceType(new IntType())),
+                new CompoundStatement(
+                        new VariableStatement("v2", new ReferenceType(new IntType())),
+                        new CompoundStatement(
+                                new VariableStatement("x", new IntType()),
+                                new CompoundStatement(
+                                        new VariableStatement("q", new IntType()),
+                                        new CompoundStatement(
+                                                new HeapAllocStatement("v1", new ValueExpression(new IntValue(20))),
+                                                new CompoundStatement(
+                                                        new HeapAllocStatement("v2", new ValueExpression(new IntValue(30))),
+                                                        new CompoundStatement(
+                                                                new LockInitStatement("x"),
+                                                                new CompoundStatement(
+                                                                        new ForkStatement(
+                                                                                new CompoundStatement(
+                                                                                        new ForkStatement(
+                                                                                                new CompoundStatement(
+                                                                                                        new LockStatement("x"),
+                                                                                                        new CompoundStatement(
+                                                                                                                new HeapWriteStatement("v1", new ArithmeticExpression("-", new HeapReadExpression(new VariableExpression("v1")), new ValueExpression(new IntValue(1)))),
+                                                                                                                new UnlockStatement("x")
+                                                                                                        )
+                                                                                                )
+                                                                                        ),
+                                                                                        new CompoundStatement(
+                                                                                                new LockStatement("x"),
+                                                                                                new CompoundStatement(
+                                                                                                        new HeapWriteStatement("v1", new ArithmeticExpression("*", new HeapReadExpression(new VariableExpression("v1")), new ValueExpression(new IntValue(10)))),
+                                                                                                        new UnlockStatement("x")
+                                                                                                )
+                                                                                        )
+                                                                                )
+                                                                        ),
+                                                                        new CompoundStatement(
+                                                                                new LockInitStatement("q"),
+                                                                                new CompoundStatement(
+                                                                                        new ForkStatement(
+                                                                                                new CompoundStatement(
+                                                                                                        new ForkStatement(
+                                                                                                                new CompoundStatement(
+                                                                                                                        new LockStatement("q"),
+                                                                                                                        new CompoundStatement(
+                                                                                                                                new HeapWriteStatement("v2", new ArithmeticExpression("+", new HeapReadExpression(new VariableExpression("v2")), new ValueExpression(new IntValue(5)))),
+                                                                                                                                new UnlockStatement("q")
+                                                                                                                        )
+                                                                                                                )
+                                                                                                        ),
+                                                                                                        new CompoundStatement(
+                                                                                                                new LockStatement("q"),
+                                                                                                                new CompoundStatement(
+                                                                                                                        new HeapWriteStatement("v2", new ArithmeticExpression("*", new HeapReadExpression(new VariableExpression("v2")), new ValueExpression(new IntValue(10)))),
+                                                                                                                        new UnlockStatement("q")
+                                                                                                                )
+                                                                                                        )
+                                                                                                )
+                                                                                        ),
+                                                                                        new CompoundStatement(
+                                                                                                new NOPStatement(),
+                                                                                                new CompoundStatement(
+                                                                                                        new NOPStatement(),
+                                                                                                        new CompoundStatement(
+                                                                                                                new NOPStatement(),
+                                                                                                                new CompoundStatement(
+                                                                                                                        new NOPStatement(),
+                                                                                                                        new CompoundStatement(
+                                                                                                                                new CompoundStatement(
+                                                                                                                                        new LockStatement("x"),
+                                                                                                                                        new CompoundStatement(
+                                                                                                                                                new PrintStatement(new HeapReadExpression(new VariableExpression("v1"))),
+                                                                                                                                                new UnlockStatement("x")
+                                                                                                                                        )
+                                                                                                                                ),
+                                                                                                                                new CompoundStatement(
+                                                                                                                                        new LockStatement("q"),
+                                                                                                                                        new CompoundStatement(
+                                                                                                                                                new PrintStatement(new HeapReadExpression(new VariableExpression("v2"))),
+                                                                                                                                                new UnlockStatement("q")
+                                                                                                                                        )
+                                                                                                                                )
+                                                                                                                        )
+                                                                                                                )
+                                                                                                        )
+                                                                                                )
+                                                                                        )
+                                                                                )
+                                                                        )
+                                                                )
+                                                        )
+                                                )
+                                        )
+                                )
+                        )
+                )
+        );
+
         x.add(example1);
         x.add(example2);
         x.add(example3);
@@ -287,6 +409,8 @@ public class ListController {
         x.add(example9);
         x.add(example10);
         x.add(example11);
+        x.add(example12);
+        x.add(example13);
         return x;
     }
 }

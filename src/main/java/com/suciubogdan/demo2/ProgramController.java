@@ -1,10 +1,7 @@
 package com.suciubogdan.demo2;
 
 import com.suciubogdan.demo2.Controller.Service;
-import com.suciubogdan.demo2.Module.Containers.HeapInterface;
-import com.suciubogdan.demo2.Module.Containers.HeapTable;
-import com.suciubogdan.demo2.Module.Containers.ListInterface;
-import com.suciubogdan.demo2.Module.Containers.MyList;
+import com.suciubogdan.demo2.Module.Containers.*;
 import com.suciubogdan.demo2.Module.Exception.*;
 import com.suciubogdan.demo2.Module.ProgramState;
 import com.suciubogdan.demo2.Module.Statement.StatementInterface;
@@ -63,6 +60,15 @@ public class ProgramController {
     private TableColumn<Pair<String, ValueInterface>, String> symValueColumn;
 
     @FXML
+    private TableView<Pair<Integer, Integer>> lockTable;
+
+    @FXML
+    private TableColumn<Pair<Integer, Integer>, Integer> lockTableAddress;
+
+    @FXML
+    private TableColumn<Pair<Integer, Integer>, Integer> lockTableOwner;
+
+    @FXML
     private TextField numberOfProgramStates;
 
     @FXML
@@ -74,6 +80,8 @@ public class ProgramController {
         valueColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().second.toString()));
         symVariableColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().first));
         symValueColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().second.toString()));
+        lockTableAddress.setCellValueFactory(p -> new SimpleIntegerProperty(p.getValue().first).asObject());
+        lockTableOwner.setCellValueFactory(p -> new SimpleIntegerProperty(p.getValue().second).asObject());
         oneStep.setOnAction(actionEvent -> {
             if(controller == null){
                 Alert alert = new Alert(Alert.AlertType.ERROR, "The program was not selected", ButtonType.OK);
@@ -119,6 +127,21 @@ public class ProgramController {
         populateFileTable();
         populateSymbolTable();
         populateExecutionStack();
+        populateLockTable();
+    }
+
+    private void populateLockTable(){
+        LockInterface<Integer, Integer> lockT;
+        if (!controller.getProgramStates().isEmpty())
+            lockT = controller.getProgramStates().get(0).getLockTable();
+        else lockT = new LockTable();
+        List<Pair<Integer, Integer>> locktableList = new ArrayList<>();
+        for(Map.Entry entry : lockT.getContent().entrySet())
+        {
+            locktableList.add(new Pair<>((Integer) entry.getKey(), (Integer) entry.getValue()));
+        }
+        lockTable.setItems(FXCollections.observableList(locktableList));
+        lockTable.refresh();
     }
 
     private void populateHeap() {
@@ -138,7 +161,7 @@ public class ProgramController {
     private void populateProgramStateIdentifiers() {
         List<ProgramState> programStates = controller.getProgramStates();
         List<Integer> idList = new ArrayList<>();
-        if (!(programStates.size() == 1 && !programStates.get(0).isNotCompleted())) {
+        if (!(programStates.size() == programStates.stream().filter(p -> !p.isNotCompleted()).count())) {
             idList = programStates.stream().map(ProgramState::getId).collect(Collectors.toList());
         }
         else{

@@ -23,7 +23,8 @@ public class ForkStatement implements StatementInterface {
         DictionaryInterface<String, ValueInterface> symbolTableClone = state.getSymbolTable().deepCopy();
         FileTableInterface fileTable = state.getFileTable();
         HeapInterface<Integer, ValueInterface> heap = state.getHeapTable();
-        return new ProgramState(out, forkStack, symbolTableClone, fileTable, statement, heap);
+        LockInterface<Integer, Integer> lockTable = state.getLockTable();
+        return new ProgramState(out, forkStack, symbolTableClone, fileTable, statement, heap, lockTable);
     }
 
     @Override

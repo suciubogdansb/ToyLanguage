@@ -14,6 +14,8 @@ public class ProgramState {
     DictionaryInterface<String, ValueInterface> symbolTable;
     FileTableInterface fileTable;
     HeapInterface<Integer, ValueInterface> heapTable;
+
+    LockInterface<Integer, Integer> lockTable;
     StatementInterface originalProgram;
 
     static int counter = 0;
@@ -29,13 +31,15 @@ public class ProgramState {
 
     public ProgramState(ListInterface<ValueInterface> out, StackInterface<StatementInterface> executionStack,
                  DictionaryInterface<String, ValueInterface> symbolTable, FileTableInterface fileTable,
-                 StatementInterface originalProgram, HeapInterface<Integer, ValueInterface> heapTable) {
+                 StatementInterface originalProgram, HeapInterface<Integer, ValueInterface> heapTable,
+                 LockInterface<Integer, Integer> lockTable) {
         this.out = out;
         this.executionStack = executionStack;
         this.symbolTable = symbolTable;
         this.fileTable = fileTable;
         this.originalProgram = originalProgram.deepCopy();
         this.heapTable = heapTable;
+        this.lockTable = lockTable;
         this.id = getCounter();
         this.executionStack.push(originalProgram);
     }
@@ -46,6 +50,7 @@ public class ProgramState {
         this.symbolTable = new MyDictionary<String, ValueInterface>();
         this.fileTable = new FileTable();
         this.heapTable = new HeapTable();
+        this.lockTable = new LockTable();
         this.originalProgram = originalProgram.deepCopy();
         this.id = getCounter();
         this.executionStack.push(originalProgram);
@@ -72,6 +77,8 @@ public class ProgramState {
         return heapTable;
     }
 
+    public LockInterface<Integer, Integer> getLockTable() {return lockTable;}
+
     public void setExecutionStack(StackInterface<StatementInterface> executionStack) {
         this.executionStack = executionStack;
     }
@@ -91,6 +98,8 @@ public class ProgramState {
     public void setHeapTable(HeapInterface<Integer, ValueInterface> heapTable) {
         this.heapTable = heapTable;
     }
+
+    public void setLockTable(LockInterface<Integer, Integer> newLockTable) {this.lockTable = newLockTable;}
 
     @Override
     public String toString() {
@@ -117,12 +126,12 @@ public class ProgramState {
             FileTableString.append(key.toString()).append("\n");
         }
         programStateString += ExecutionStackString.toString() + SymbolTableString.toString() +
-                OutputString.toString() + FileTableString.toString() + heapTable.toString();
+                OutputString.toString() + FileTableString.toString() + heapTable.toString() + lockTable.toString();
         return programStateString;
     }
 
     public ProgramState oneStep() throws StackException, DictionaryException,
-            DivisionException, HeapException, TypeException, IOException, ExpressionException {
+            DivisionException, HeapException, TypeException, IOException, ExpressionException, LockException {
         if (executionStack.isEmpty()) {
             throw new StackException("Execution stack is empty!");
         }
@@ -135,6 +144,7 @@ public class ProgramState {
         this.executionStack.clear();
         this.symbolTable.clear();
         this.fileTable.clear();
+        this.lockTable.clear();
         this.executionStack.push(originalProgram.deepCopy());
     }
 
